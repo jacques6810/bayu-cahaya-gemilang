@@ -9,17 +9,65 @@ function Navbar() {
   const [selected, setSelected] = useState(
     localStorage.getItem("selected") || "BERANDA"
   );
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("selected", selected);
   }, [selected]);
 
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setSelected("BERANDA");
+        break;
+      case "/about":
+        setSelected("TENTANG KAMI");
+        break;
+      case "/developer":
+        setSelected("DEVELOPER");
+        break;
+      case "/simulasi-kpr":
+        setSelected("SIMULASI KPR");
+        break;
+      case "/kontak-kami":
+        setSelected("KONTAK KAMI");
+        break;
+      default:
+        setSelected("BERANDA");
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleSelect = (item) => {
     setSelected(item);
+    setMenuOpen(false); // Close the menu when an item is selected
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav className="bg-transparent fixed w-full z-20 top-0 start-0">
+    <nav
+      className={`fixed w-full z-50 top-0 start-0 transition-colors duration-300 ${
+        scrolled ? "background-secondary-color shadow-lg" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={Logo} className="h-14" alt="Flowbite Logo" />
@@ -37,7 +85,8 @@ function Navbar() {
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-sticky"
-            aria-expanded="false"
+            aria-expanded={menuOpen}
+            onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -58,7 +107,9 @@ function Navbar() {
           </button>
         </div>
         <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          className={`items-center justify-between ${
+            menuOpen ? "block" : "hidden"
+          } w-full md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 tracking-widest font-bold border border-gray-100 rounded-lg bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">

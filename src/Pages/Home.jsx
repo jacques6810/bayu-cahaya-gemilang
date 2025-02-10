@@ -8,7 +8,6 @@ function Home() {
   return (
     <div className="relative w-full h-screen">
       {/* Section 1 */}
-
       <img
         src={BackgroundImage}
         alt=""
@@ -21,7 +20,7 @@ function Home() {
         <Navbar />
 
         {/* Information Content */}
-        <div className="flex flex-col mx-6 items-center">
+        <div className="flex flex-col mx-6 items-center text-center md:text-left">
           <h1 className="items-center text-white font-extrabold text-6xl">
             BAYU CAHAYA GEMILANG
           </h1>
@@ -33,6 +32,19 @@ function Home() {
             Lihat Selengkapnya
           </button>
         </div>
+      </div>
+
+      {/* Section 2 */}
+      <div className="relative z-0 w-full bg-white">
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
+        <div className="border-3 border-red-500 p-10 mx-20">AWKOWAAWKOWO</div>
       </div>
     </div>
   );
