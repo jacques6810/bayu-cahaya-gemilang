@@ -75,7 +75,7 @@ function Navbar() {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            className="flex items-center whatsapp-color text-sm tracking-widest font-semibold text-white rounded-lg text-sm px-4 py-1.5 text-center"
+            className="flex items-center whatsapp-color text-sm tracking-widest font-semibold text-white rounded-lg text-sm px-4 py-1.5 text-center transform transition-transform duration-300 hover:scale-105"
           >
             <img src={IconWA} alt="Whatsapp Icon" className="h-7 w-7 mr-2" />
             WHATSAPP
