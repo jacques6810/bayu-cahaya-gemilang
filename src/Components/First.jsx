@@ -2,8 +2,8 @@ import React from "react";
 
 function First() {
   return (
-    <div>
-      <h3>HOMEPAGE ROUTE</h3>
+    <div className="border-2 border-black p-4">
+      <h3>HOME ROUTE</h3>
     </div>
   );
 }
