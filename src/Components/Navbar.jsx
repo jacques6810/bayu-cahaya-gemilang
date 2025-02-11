@@ -11,6 +11,7 @@ function Navbar() {
   );
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     localStorage.setItem("selected", selected);
@@ -39,17 +40,31 @@ function Navbar() {
   }, [location.pathname]);
 
   useEffect(() => {
+    let timeoutId;
+
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop === 0) {
         setScrolled(false);
+        setVisible(true);
+        clearTimeout(timeoutId);
+      } else {
+        setScrolled(true);
+        setVisible(true);
+
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          setVisible(false);
+        }, 3000);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutId);
     };
   }, []);
 
@@ -64,8 +79,10 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 top-0 start-0 transition-colors duration-300 ${
+      className={`fixed w-full z-50 top-0 start-0 transition-all duration-300 ${
         scrolled ? "background-secondary-color shadow-lg" : "bg-transparent"
+      } ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
       }`}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -117,12 +134,12 @@ function Navbar() {
               <a
                 href="/"
                 onClick={() => handleSelect("BERANDA")}
-                className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 ${
+                className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "BERANDA"
                     ? "text-primary-color font-bold"
                     : location.pathname === "/"
-                    ? "text-white font-normal"
-                    : "text-black font-normal"
+                    ? "text-white font-normal hover:text-primary-color hover:scale-105"
+                    : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
                 aria-current="page"
               >
@@ -133,12 +150,12 @@ function Navbar() {
               <a
                 href="/about"
                 onClick={() => handleSelect("TENTANG KAMI")}
-                className={`block py-2 px-3 text-xs rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${
+                className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "TENTANG KAMI"
                     ? "text-primary-color font-bold"
                     : location.pathname === "/"
-                    ? "text-white font-normal"
-                    : "text-black font-normal"
+                    ? "text-white font-normal hover:text-primary-color hover:scale-105"
+                    : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
               >
                 TENTANG KAMI
@@ -148,12 +165,12 @@ function Navbar() {
               <a
                 href="#"
                 onClick={() => handleSelect("DEVELOPER")}
-                className={`block py-2 px-3 text-xs rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${
+                className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "DEVELOPER"
                     ? "text-primary-color font-bold"
                     : location.pathname === "/"
-                    ? "text-white font-normal"
-                    : "text-black font-normal"
+                    ? "text-white font-normal hover:text-primary-color hover:scale-105"
+                    : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
               >
                 DEVELOPER
@@ -163,12 +180,12 @@ function Navbar() {
               <a
                 href="#"
                 onClick={() => handleSelect("SIMULASI KPR")}
-                className={`block py-2 px-3 text-xs rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${
+                className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "SIMULASI KPR"
                     ? "text-primary-color font-bold"
                     : location.pathname === "/"
-                    ? "text-white font-normal"
-                    : "text-black font-normal"
+                    ? "text-white font-normal hover:text-primary-color hover:scale-105"
+                    : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
               >
                 SIMULASI KPR
@@ -178,12 +195,12 @@ function Navbar() {
               <a
                 href="#"
                 onClick={() => handleSelect("KONTAK KAMI")}
-                className={`block py-2 px-3 text-xs rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:p-0 ${
+                className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "KONTAK KAMI"
                     ? "text-primary-color font-bold"
                     : location.pathname === "/"
-                    ? "text-white font-normal"
-                    : "text-black font-normal"
+                    ? "text-white font-normal hover:text-primary-color hover:scale-105"
+                    : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
               >
                 KONTAK KAMI
