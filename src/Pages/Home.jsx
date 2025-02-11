@@ -5,6 +5,7 @@ import InfoIcon from "../assets/Icon Information.svg";
 import Logo from "../assets/Logo BCG.png";
 import "../App.css";
 import CobaGambar from "../assets/CobaGambar.png";
+import Section3 from "../Components/Section3";
 
 function Home() {
   const scrollToSection2 = () => {
@@ -59,7 +60,7 @@ function Home() {
             Lorem Ipsum has been the industry's standard dummy text.
           </p>
           <button
-            className="flex items-center p-2.5 px-8 mt-7 text-primary-color font-bold text-white tracking-wider border-3 rounded-xl transform transition-transform duration-300 hover:scale-105"
+            className="flex items-center p-2.5 px-8 mt-7 font-semibold px-6 py-3 border-3 border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition"
             onClick={scrollToSection2}
           >
             Selengkapnya
@@ -76,10 +77,7 @@ function Home() {
         className="flex flex-col md:flex-col lg:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-10 gap-4"
       >
         <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full lg:w-full p-4 border-2 border-red-500">
-          <img src={Logo} alt="Logo BCG" className="h-15 w-30 mb-7" />
-          <h2 className="text-center max-w-xl font-semibold text-2xl md:text-5xl leading-snug">
-            Developer
-          </h2>
+          <Section3 />
         </div>
       </div>
 
