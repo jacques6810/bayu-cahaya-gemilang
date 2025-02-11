@@ -78,10 +78,10 @@ const Section3 = () => {
       </div>
 
       <div className="flex gap-4 mt-6">
-        <button className="text-sm font-semibold px-6 py-3 border-3 border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition">
+        <button className="text-sm font-semibold px-6 py-3 border-3 border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition min-w-[150px] md:min-w-[200px]">
           Selengkapnya
         </button>
-        <button className="text-sm font-semibold px-6 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition">
+        <button className="text-sm font-semibold px-6 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition min-w-[150px] md:min-w-[200px]">
           Simulasi KPR
         </button>
       </div>

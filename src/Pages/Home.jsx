@@ -76,9 +76,17 @@ function Home() {
         id="section-3"
         className="flex flex-col md:flex-col lg:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-10 gap-4"
       >
-        <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full lg:w-full p-4 border-2 border-red-500">
+        <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full lg:w-full p-4">
           <Section3 />
         </div>
+      </div>
+
+      {/* Section 4 */}
+      <div
+        id="section-4"
+        className="flex flex-col md:flex-col lg:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-10 gap-4"
+      >
+        <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full lg:w-full p-4 border-2 border-red-500"></div>
       </div>
 
       {/* End Div */}
