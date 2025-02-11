@@ -4,6 +4,7 @@ import BackgroundImage from "../assets/Background Home.png";
 import InfoIcon from "../assets/Icon Information.svg";
 import Logo from "../assets/Logo BCG.png";
 import "../App.css";
+import CobaGambar from "../assets/CobaGambar.png";
 
 function Home() {
   const scrollToSection2 = () => {
@@ -45,15 +46,15 @@ function Home() {
       {/* Section 2 */}
       <div
         id="section-2"
-        className="flex flex-col md:flex-row relative z-0 w-full bg-white border-3 border-red-500 mt-30 p-4 md:p-10"
+        className="flex flex-col md:flex-col lg:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-10 gap-4"
       >
-        <div className="flex flex-col items-center border-2 border-blue-200 mx-4 md:mx-20 mb-4 md:mb-0">
+        <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full lg:w-1/2 p-4">
           <img src={Logo} alt="Logo BCG" className="h-15 w-30 mb-7" />
           <h2 className="text-center max-w-xl font-semibold text-2xl md:text-5xl leading-snug">
             Bangun Rumah Impian Anda Menjadi Kenyataan
           </h2>
           <p className="mt-7 max-w-xl text-center leading-relaxed">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
+            Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text.
             Lorem Ipsum has been the industry's standard dummy text.
           </p>
@@ -64,19 +65,25 @@ function Home() {
             Selengkapnya
           </button>
         </div>
-        <div className="flex flex-row items-center gap-4 border-2 border-blue-200 p-4 md:p-10 mx-4 md:mx-20 w-full md:w-auto h-auto">
-          <img
-            src={BackgroundImage}
-            alt=""
-            className="h-40 w-40 md:h-80 md:w-50"
-          />
-          <img
-            src={BackgroundImage}
-            alt=""
-            className="mt-10 h-40 w-40 md:mt-20 md:h-80 md:w-50"
-          />
+        <div className="flex flex-col justify-center items-center p-4 md:p-10 mx-auto md:mx-20 w-full lg:w-1/2 h-auto overflow-hidden">
+          <img src={CobaGambar} alt="" className="w-full" />
         </div>
       </div>
+
+      {/* Section 3 */}
+      <div
+        id="section-3"
+        className="flex flex-col md:flex-col lg:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-10 gap-4"
+      >
+        <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full lg:w-full p-4 border-2 border-red-500">
+          <img src={Logo} alt="Logo BCG" className="h-15 w-30 mb-7" />
+          <h2 className="text-center max-w-xl font-semibold text-2xl md:text-5xl leading-snug">
+            Developer
+          </h2>
+        </div>
+      </div>
+
+      {/* End Div */}
     </div>
   );
 }
