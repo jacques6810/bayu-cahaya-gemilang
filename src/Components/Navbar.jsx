@@ -79,7 +79,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 top-0 start-0 transition-all duration-300 ${
+      className={`fixed w-full z-50 top-0 start-0 lg:w-full sm:border-5 sm:border-red-500 md:border-5 md:border-blue-500 lg:border-5 lg:border-green-500 xl:border-5 xl:border-yellow-500 transition-all duration-300 ${
         scrolled ? "background-secondary-color shadow-lg" : "bg-transparent"
       } ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"

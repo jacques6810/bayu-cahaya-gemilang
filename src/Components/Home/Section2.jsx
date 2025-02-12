@@ -14,9 +14,9 @@ function Section2() {
   return (
     <div
       id="section-2"
-      className="flex flex-col md:flex-col lg:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-10 gap-4"
+      className="flex flex-col md:items-center md:flex-col lg:flex-col xl:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-22 gap-4"
     >
-      <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full lg:w-1/2 p-4">
+      <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full xl:w-1/2 p-4">
         <img src={Logo} alt="Logo BCG" className="h-15 w-30 mb-7" />
         <h2 className="text-center max-w-xl font-semibold text-2xl md:text-5xl leading-snug">
           Bangun Rumah Impian Anda Menjadi Kenyataan
@@ -33,8 +33,12 @@ function Section2() {
           Selengkapnya
         </button>
       </div>
-      <div className="flex flex-col justify-center items-center p-4 md:p-10 mx-auto md:mx-20 w-full lg:w-1/2 h-auto overflow-hidden">
-        <img src={CobaGambar} alt="" className="w-full" />
+      <div className="flex flex-col justify-center items-center p-4 md:p-10 mx-auto md:mx-20 w-full xl:w-1/2 h-auto overflow-hidden">
+        <img
+          src={CobaGambar}
+          alt=""
+          className="w-full lg:h-140 lg:w-140 sm:h-100 sm:w-100"
+        />
       </div>
     </div>
   );
