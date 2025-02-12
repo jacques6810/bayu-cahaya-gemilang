@@ -21,7 +21,7 @@ function Section1() {
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         {/* Information Content */}
         <div className="flex flex-col mx-6 items-center text-center md:text-left">
-          <h1 className="items-center text-white font-extrabold text-6xl">
+          <h1 className="items-center text-white font-extrabold text-6xl sm:text-center">
             BAYU CAHAYA GEMILANG
           </h1>
           <p className="text-xl text-white mt-5 backdrop-opacity-10">
