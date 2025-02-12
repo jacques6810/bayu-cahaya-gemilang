@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import BackgroundGambar from "../assets/Background Home.png";
 import Section1 from "../Components/Home/Section1";
 import Section2 from "../Components/Home/Section2";
 import Section3 from "../Components/Home/Section3";
+import Section4 from "../Components/Home/Section4";
 import "../App.css";
 
 function Home() {
@@ -13,6 +13,7 @@ function Home() {
       <Section1 />
       <Section2 />
       <Section3 />
+      <Section4 />
     </div>
   );
 }
