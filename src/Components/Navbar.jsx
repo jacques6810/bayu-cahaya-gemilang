@@ -131,7 +131,7 @@ function Navbar() {
           } w-full md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 md:text-xs lg:text-sm mt-4 tracking-widest font-bold border border-gray-100 rounded-lg bg-transparent md:space-x-2 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 md:text-xs lg:text-sm mt-4 tracking-widest font-bold border border-gray-100 rounded-lg bg-transparent md:space-x-4 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
             <li>
               <a
                 href="/"
@@ -205,7 +205,7 @@ function Navbar() {
                     : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
               >
-                KONTAK KAMI
+                KONTAK
               </a>
             </li>
           </ul>

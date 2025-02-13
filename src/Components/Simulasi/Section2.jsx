@@ -14,7 +14,7 @@ function Section2() {
       <h1 className="text-4xl font-semibold text-center mb-5">
         KERJASAMA BANK
       </h1>
-      <div className="grid gap-2 my-10 gap-15 md:px-5 lg:px-20 lg:gap-20 items-center justify-items-center w-full object-cover grid-cols-3 md:grid-cols-5">
+      <div className="grid gap-2 my-10 gap-5 sm:gap-15 md:px-5 lg:px-20 lg:gap-20 items-center justify-items-center w-full object-cover grid-cols-3 md:grid-cols-5">
         <img src={BankBRI} alt="Bank BRI" className="h-auto w-auto mb-7" />
         <img src={BankBJB} alt="Bank BJB" className="h-auto w-auto mb-7" />
         <img

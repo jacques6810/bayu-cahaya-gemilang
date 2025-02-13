@@ -97,10 +97,10 @@ function Section1() {
             </p>
           </div>
         </div>
-
-        <p className="text-sm text-gray-600 text-center mt-4">
+        {/* <hr className="mt-30 border-1 border-teal-500" /> */}
+        {/* <p className="text-sm text-gray-600 text-center mt-4">
           Simulasi di atas hanya perhitungan dengan suku bunga tetap (fixed)
-        </p>
+        </p> */}
       </div>
     </div>
   );
