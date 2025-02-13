@@ -180,7 +180,7 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#"
+                href="/simulasi-kpr"
                 onClick={() => handleSelect("SIMULASI KPR")}
                 className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "SIMULASI KPR"

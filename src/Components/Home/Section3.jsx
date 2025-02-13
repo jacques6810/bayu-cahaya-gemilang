@@ -83,7 +83,7 @@ const Section3 = () => {
             <a href="/developer">Selengkapnya</a>
           </button>
           <button className="text-sm font-semibold px-8 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-            Simulasi KPR
+            <a href="/simulasi-kpr">Simulasi KPR</a>
           </button>
         </div>
       </div>
