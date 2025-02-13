@@ -80,7 +80,7 @@ const Section3 = () => {
 
         <div className="flex gap-4 mt-6">
           <button className="text-sm font-semibold px-6 py-3 border-3 border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-            Selengkapnya
+            <a href="/developer">Selengkapnya</a>
           </button>
           <button className="text-sm font-semibold px-8 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
             Simulasi KPR

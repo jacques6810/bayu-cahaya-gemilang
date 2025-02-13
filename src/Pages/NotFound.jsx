@@ -8,7 +8,9 @@ function NotFound() {
     <div className="relative w-full h-screen bg-gray-100">
       <Navbar />
       <div className="flex flex-col items-center justify-center h-full text-center p-4">
-        <h1 className="text-6xl font-extrabold text-gray-800 mb-4">404</h1>
+        <h1 className="text-6xl font-extrabold text-gray-800 mb-4 text-primary-color">
+          404
+        </h1>
         <h2 className="text-2xl font-semibold text-gray-600 mb-4">
           Page Not Found
         </h2>
