@@ -23,7 +23,7 @@ const Section4 = () => {
           We provide a complete service for the ale, purchase or rental of real
           estate.
         </p>
-        <button className="shadow-xl tracking-widest text-sm font-regular px-6 py-2 my-5 bg-teal-600 text-white rounded-lg hover:bg-teal-800 transition min-w-[150px] md:min-w-[200px]">
+        <button className="shadow-xl tracking-widest text-sm font-regular px-10 py-2 my-5 bg-teal-600 text-white rounded-lg hover:bg-teal-800 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
           KLIK DISINI
         </button>
       </div>
