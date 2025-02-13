@@ -4,6 +4,7 @@
   --primary-color: #23aca2;
   --secondary-color: #0c6f83;
   --whatsapp-color: #35cd44;
+  --gradient-color: linear-gradient(90deg, #23aca2, #2c3e50);
 }
 
 body {
@@ -14,6 +15,10 @@ body {
   color: var(--primary-color);
 }
 
+.text-secondary-color {
+  color: var(--secondary-color);
+}
+
 .whatsapp-color {
   background-color: var(--whatsapp-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -21,4 +26,8 @@ body {
 
 .background-secondary-color {
   background-color: var(--secondary-color);
+}
+
+.background-gradient {
+  background: var(--gradient-color);
 }

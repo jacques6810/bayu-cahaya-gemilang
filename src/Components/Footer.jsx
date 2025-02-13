@@ -11,7 +11,7 @@ function Footer() {
       <footer className="flex flex-col lg:flex-row gap-2 items-center justify-between w-full bg-gray-800 text-white text-center py-20 px-20 mt-30">
         {/* Logo */}
         <div className="mb-6 lg:mb-0 flex justify-center lg:justify-start w-full lg:w-auto">
-          <img src={LogoFooter} alt="Logo" className="w-32 md:w-40 xl:w-60" />
+          <img src={LogoFooter} alt="Logo" className="w-38 md:w-40 xl:w-60" />
         </div>
 
         {/* Navigation Links */}

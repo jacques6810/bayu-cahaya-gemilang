@@ -1,16 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo BCG.png";
 import "../../App.css";
 import CobaGambar from "../../assets/CobaGambar.png";
 
 function Section2() {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/about");
-  };
-
   return (
     <div
       id="section-2"
@@ -26,11 +19,8 @@ function Section2() {
           industry. Lorem Ipsum has been the industry's standard dummy text.
           Lorem Ipsum has been the industry's standard dummy text.
         </p>
-        <button
-          className="flex items-center p-2.5 px-8 mt-7 font-semibold px-6 py-3 border-3 border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95"
-          onClick={handleClick}
-        >
-          Selengkapnya
+        <button className="flex items-center p-2.5 px-8 mt-7 font-semibold px-6 py-3 border-3 border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
+          <a href="/about">Selengkapnya</a>
         </button>
       </div>
       <div className="flex flex-col justify-center items-center p-4 md:p-4 mx-auto md:mx-20 w-full xl:w-1/2 h-auto overflow-hidden">

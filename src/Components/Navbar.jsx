@@ -77,6 +77,8 @@ function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
+  const isHomePage = location.pathname === "/";
+
   return (
     <nav
       className={`fixed w-full z-50 top-0 start-0 lg:w-full transition-all duration-300 ${
@@ -137,7 +139,7 @@ function Navbar() {
                 className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "BERANDA"
                     ? "text-primary-color font-bold"
-                    : location.pathname === "/"
+                    : isHomePage || scrolled
                     ? "text-white font-normal hover:text-primary-color hover:scale-105"
                     : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
@@ -153,7 +155,7 @@ function Navbar() {
                 className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "TENTANG KAMI"
                     ? "text-primary-color font-bold"
-                    : location.pathname === "/"
+                    : isHomePage || scrolled
                     ? "text-white font-normal hover:text-primary-color hover:scale-105"
                     : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
@@ -168,7 +170,7 @@ function Navbar() {
                 className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "DEVELOPER"
                     ? "text-primary-color font-bold"
-                    : location.pathname === "/"
+                    : isHomePage || scrolled
                     ? "text-white font-normal hover:text-primary-color hover:scale-105"
                     : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
@@ -183,7 +185,7 @@ function Navbar() {
                 className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "SIMULASI KPR"
                     ? "text-primary-color font-bold"
-                    : location.pathname === "/"
+                    : isHomePage || scrolled
                     ? "text-white font-normal hover:text-primary-color hover:scale-105"
                     : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
@@ -198,7 +200,7 @@ function Navbar() {
                 className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "KONTAK KAMI"
                     ? "text-primary-color font-bold"
-                    : location.pathname === "/"
+                    : isHomePage || scrolled
                     ? "text-white font-normal hover:text-primary-color hover:scale-105"
                     : "text-black font-normal hover:text-primary-color hover:scale-105"
                 }`}
