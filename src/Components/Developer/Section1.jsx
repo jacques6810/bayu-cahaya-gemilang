@@ -10,14 +10,15 @@ function Section1() {
       <img src={LogoBCG} alt="Logo BCG" className="h-15 w-30 mb-7" />
       <h1 className="text-4xl font-semibold text-center mb-5">CLUSTER</h1>
       <div className="grid gap-6 my-10 w-full object-cover grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-        <div className="relative w-full h-90 lg:h-120 xl:h-120 shadow-2xl overflow-hidden">
+        {/* Artha Soreang Living */}
+        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group">
           <img
             src={ASL}
             alt=""
-            className="w-full h-90 lg:h-120 object-cover rounded-xl transform transition-transform duration-300 ease-in-out hover:scale-105 z-10"
+            className="w-full h-full object-cover rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
           />
-          <div className="absolute inset-0 rounded-lg bg-black opacity-50 z-20"></div>
-          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5 z-30">
+          <div className="absolute inset-0 rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
+          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5">
             <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
               ARTHA SOREANG LIVING
             </h1>
@@ -26,14 +27,16 @@ function Section1() {
             </button>
           </div>
         </div>
-        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden">
+
+        {/* Bukit Ciampea Asih */}
+        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group">
           <img
             src={BCA}
             alt=""
-            className="w-full h-90 lg:h-120 object-cover rounded-xl transform transition-transform duration-300 ease-in-out hover:scale-105 z-10"
+            className="w-full h-full object-cover rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
           />
-          <div className="absolute inset-0 rounded-lg bg-black opacity-50 z-20"></div>
-          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5 z-30">
+          <div className="absolute inset-0 rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
+          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5">
             <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
               BUKIT CIAMPEA ASIH
             </h1>
@@ -42,14 +45,16 @@ function Section1() {
             </button>
           </div>
         </div>
-        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden">
+
+        {/* Pasanggrahan Hill */}
+        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group">
           <img
             src={ASL}
             alt=""
-            className="w-full h-90 lg:h-120 object-cover rounded-xl transform transition-transform duration-300 ease-in-out hover:scale-105 z-10"
+            className="w-full h-full object-cover rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
           />
-          <div className="absolute inset-0 rounded-lg bg-black opacity-50 z-20"></div>
-          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5 z-30">
+          <div className="absolute inset-0 rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
+          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5">
             <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
               PASANGGRAHAN HILL
             </h1>
