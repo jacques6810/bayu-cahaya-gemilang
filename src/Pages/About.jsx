@@ -8,7 +8,7 @@ import "../App.css";
 
 function About() {
   return (
-    <div className="w-full sm:border-5 sm:border-red-500 md:border-5 md:border-blue-500 lg:border-5 lg:border-green-500 xl:border-5 xl:border-yellow-500">
+    <div className="w-full">
       <Navbar />
       <Header />
       <Section1 />

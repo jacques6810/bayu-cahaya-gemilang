@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Developer from "./Pages/Developer";
 import Simulasi from "./Pages/Simulasi";
+import Kontak from "./Pages/Kontak";
 import NotFound from "./Pages/NotFound";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/developer" element={<Developer />} />
         <Route path="/simulasi-kpr" element={<Simulasi />} />
+        <Route path="/kontak-kami" element={<Kontak />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Router>

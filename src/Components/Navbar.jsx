@@ -102,7 +102,7 @@ function Navbar() {
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-200 dark:focus:ring-gray-400"
             aria-controls="navbar-sticky"
             aria-expanded={menuOpen}
             onClick={toggleMenu}
@@ -195,7 +195,7 @@ function Navbar() {
             </li>{" "}
             <li>
               <a
-                href="#"
+                href="/kontak-kami"
                 onClick={() => handleSelect("KONTAK KAMI")}
                 className={`block py-2 px-3 text-xs rounded-sm md:bg-transparent md:p-0 transform transition-transform duration-300 ${
                   selected === "KONTAK KAMI"
