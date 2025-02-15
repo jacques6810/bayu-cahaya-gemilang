@@ -23,7 +23,7 @@ function Section1() {
               ARTHA SOREANG LIVING
             </h1>
             <button className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-              Info Selengkapnya
+              <a href="/developer/bumi-ciampea-asih">Info Selengkapnya</a>
             </button>
           </div>
         </div>
@@ -41,7 +41,7 @@ function Section1() {
               BUKIT CIAMPEA ASIH
             </h1>
             <button className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-              Info Selengkapnya
+              <a href="/developer/bumi-ciampea-asih">Info Selengkapnya</a>
             </button>
           </div>
         </div>
@@ -59,7 +59,7 @@ function Section1() {
               PASANGGRAHAN HILL
             </h1>
             <button className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-              Info Selengkapnya
+              <a href="/developer/bumi-ciampea-asih">Info Selengkapnya</a>
             </button>
           </div>
         </div>
