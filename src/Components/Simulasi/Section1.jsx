@@ -4,10 +4,10 @@ import "../../App.css";
 
 function Section1() {
   const [hargaProperti, setHargaProperti] = useState(400000000);
-  const [dp, setDp] = useState(80000000);
   const [sukuBunga, setSukuBunga] = useState(7.7);
   const [jangkaWaktu, setJangkaWaktu] = useState(15);
 
+  const dp = hargaProperti * 0.2; // Calculate DP as 20% of hargaProperti
   const pinjaman = hargaProperti - dp;
   const bungaPerBulan = sukuBunga / 100 / 12;
   const totalBulan = jangkaWaktu * 12;
@@ -62,8 +62,8 @@ function Section1() {
             <input
               type="number"
               value={dp}
-              onChange={(e) => setDp(Number(e.target.value))}
-              className="w-full p-3 border rounded-lg"
+              readOnly
+              className="w-full p-3 border rounded-lg bg-gray-100 cursor-not-allowed"
             />
           </div>
 
@@ -97,10 +97,6 @@ function Section1() {
             </p>
           </div>
         </div>
-        {/* <hr className="mt-30 border-1 border-teal-500" /> */}
-        {/* <p className="text-sm text-gray-600 text-center mt-4">
-          Simulasi di atas hanya perhitungan dengan suku bunga tetap (fixed)
-        </p> */}
       </div>
     </div>
   );
