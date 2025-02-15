@@ -15,6 +15,23 @@ import IconHome from "../../assets/Icon House BCA.png";
 function BumiCiampeaAsih() {
   const [activeTab, setActiveTab] = useState("Deskripsi");
   const [mainImage, setMainImage] = useState(BCA_Background);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const galleryImages = [Gallery_1, Gallery_2, Gallery_3, Gallery_4];
+
+  const handlePrevClick = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? galleryImages.length - 3 : prevIndex - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === galleryImages.length - 3 ? 0 : prevIndex + 1
+    );
+  };
+
+  const displayedImages = galleryImages.slice(currentIndex, currentIndex + 3);
 
   return (
     <div>
@@ -53,16 +70,30 @@ function BumiCiampeaAsih() {
         </div>
 
         {/* Gallery */}
-        <div className="flex justify-center gap-4 mt-6">
-          {[Gallery_1, Gallery_2, Gallery_3, Gallery_4].map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Gallery ${index + 1}`}
-              className="w-20 h-15 md:w-36 md:h-24 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
-              onClick={() => setMainImage(image)}
-            />
-          ))}
+        <div className="flex justify-center items-center gap-4 mt-6">
+          <button
+            onClick={handlePrevClick}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            &lt;
+          </button>
+          <div className="flex gap-4">
+            {displayedImages.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Gallery ${index + 1}`}
+                className="w-20 h-15 md:w-36 md:h-24 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
+                onClick={() => setMainImage(image)}
+              />
+            ))}
+          </div>
+          <button
+            onClick={handleNextClick}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            &gt;
+          </button>
         </div>
 
         {/* Tab Navigasi */}
