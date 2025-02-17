@@ -10,7 +10,18 @@ import Gallery_2 from "../../assets/Gallery BCA_2.jpg";
 import Gallery_3 from "../../assets/Gallery BCA_3.jpg";
 import Gallery_4 from "../../assets/Gallery BCA_4.jpg";
 import FloorplanBCA from "../../assets/Floorplan BCA.jpg";
-import IconHome from "../../assets/Icon House BCA.png";
+import IconPondasi from "../../assets/IconSpesifikasi/Icon Pondasi BCA.png";
+import IconAtap from "../../assets/IconSpesifikasi/Icon Atap BCA.png";
+import IconAir from "../../assets/IconSpesifikasi/Icon Air BCA.png";
+import IconListrik from "../../assets/IconSpesifikasi/Icon Listrik BCA.png";
+import IconSanitasi from "../../assets/IconSpesifikasi/Icon Sanitasi BCA.png";
+import IconToilet from "../../assets/IconSpesifikasi/Icon Toilet BCA.png";
+import IconDinding from "../../assets/IconSpesifikasi/Icon Dinding BCA.png";
+import IconLantaiUtama from "../../assets/IconSpesifikasi/Icon LantaiUtama BCA.png";
+import IconPintuUtama from "../../assets/IconSpesifikasi/Icon PintuUtama BCA.png";
+import IconPintuKamar from "../../assets/IconSpesifikasi/Icon PintuKamar BCA.png";
+import IconJendela from "../../assets/IconSpesifikasi/Icon Jendela BCA.png";
+import IconPlafind from "../../assets/IconSpesifikasi/Icon Plafind BCA.png";
 
 function BumiCiampeaAsih() {
   const [activeTab, setActiveTab] = useState("Deskripsi");
@@ -137,23 +148,50 @@ function BumiCiampeaAsih() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-5 max-w-4xl mx-auto">
               <div className="lg:col-span-2">
                 {[
-                  "Batu kali Beton bertulang (Pondasi)",
-                  "Rangka Atap Baja Ringan (Struktur)",
-                  "Bata press, roster kotak (Dinding)",
-                  "Granit Tile - 60 x 60 (Lantai Utama)",
-                  "Engineering wood fin, melamic (Pintu Utama)",
-                  "Wood Panel (Pintu Kamar)",
-                  "Aluminium powder coating (Jendela)",
-                  "Gypsum, Rangka Hollow (Plafond)",
-                  "Genteng beton rangka baja ringan (Atap)",
-                  "PDAM (Air)",
-                  "1300VA (Listrik)",
-                  "American Standard (Sanitasi)",
-                  "Closet Duduk Toto Standart (Toilet)",
+                  {
+                    text: "Batu kali Beton bertulang (Pondasi)",
+                    icon: IconPondasi,
+                  },
+                  {
+                    text: "Rangka Atap Baja Ringan (Struktur)",
+                    icon: IconAtap,
+                  },
+                  {
+                    text: "Bata press, roster kotak (Dinding)",
+                    icon: IconDinding,
+                  },
+                  {
+                    text: "Granit Tile - 60 x 60 (Lantai Utama)",
+                    icon: IconLantaiUtama,
+                  },
+                  {
+                    text: "Engineering wood fin, melamic (Pintu Utama)",
+                    icon: IconPintuUtama,
+                  },
+                  { text: "Wood Panel (Pintu Kamar)", icon: IconPintuKamar },
+                  {
+                    text: "Aluminium powder coating (Jendela)",
+                    icon: IconJendela,
+                  },
+                  {
+                    text: "Gypsum, Rangka Hollow (Plafond)",
+                    icon: IconPlafind,
+                  },
+                  {
+                    text: "Genteng beton rangka baja ringan (Atap)",
+                    icon: IconAtap,
+                  },
+                  { text: "PDAM (Air)", icon: IconAir },
+                  { text: "1300VA (Listrik)", icon: IconListrik },
+                  { text: "American Standard (Sanitasi)", icon: IconSanitasi },
+                  {
+                    text: "Closet Duduk Toto Standart (Toilet)",
+                    icon: IconToilet,
+                  },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3 mt-2">
-                    <img src={IconHome} alt="icon" className="w-10 h-10" />
-                    <span>{item}</span>
+                    <img src={item.icon} alt="icon" className="w-8 h-8" />
+                    <span>{item.text}</span>
                   </div>
                 ))}
               </div>
