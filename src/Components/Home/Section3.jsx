@@ -28,20 +28,25 @@ const Section3 = () => {
   ];
 
   return (
-    <div
-      className="flex flex-col items-center mx-auto md:w-full mb-4 md:mb-0 w-full lg:w-full p-4"
-      data-aos="fade-up"
-    >
+    <div className="flex flex-col items-center mx-auto md:w-full mb-4 md:mb-0 w-full lg:w-full p-4">
       <div
         id="section-3"
         className="flex flex-col items-center w-full bg-white p-6 md:p-10"
       >
-        <img src={Logo} alt="Logo BCG" className="h-12 md:h-16 mb-5" />
-        <h2 className="text-center max-w-xl font-semibold text-3xl md:text-4xl lg:text-5xl leading-snug mb-4">
+        <img
+          src={Logo}
+          alt="Logo BCG"
+          className="h-12 md:h-16 mb-5"
+          data-aos="fade-up"
+        />
+        <h2
+          className="text-center max-w-xl font-semibold text-3xl md:text-4xl lg:text-4xl leading-snug mb-4"
+          data-aos="fade-up"
+        >
           Developer
         </h2>
 
-        <div className="relative w-full max-w-5xl">
+        <div className="relative w-full max-w-5xl" data-aos="fade-up">
           {/* Tombol Panah Kiri */}
           <button
             onClick={() => sliderRef.current.slickPrev()}
@@ -81,7 +86,7 @@ const Section3 = () => {
           </button>
         </div>
 
-        <div className="flex gap-4 mt-6">
+        <div className="flex gap-4 mt-6" data-aos="fade-up">
           <button className="text-sm font-semibold px-6 py-3 border-3 border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
             <a href="/developer">Selengkapnya</a>
           </button>
