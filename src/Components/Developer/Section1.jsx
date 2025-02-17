@@ -1,7 +1,7 @@
 import React from "react";
-import LogoBCG from "../../Assets/Logo BCG.png";
-import ASL from "../../Assets/Background Home.png";
-import BCA from "../../Assets/BukitCiampeaAsih_DeveloperBG.jpg";
+import LogoBCG from "../../assets/Logo BCG.png";
+import ASL from "../../assets/Background Home.png";
+import BCA from "../../assets/BukitCiampeaAsih_DeveloperBG.jpg";
 import "../../App.css";
 
 function Section1() {

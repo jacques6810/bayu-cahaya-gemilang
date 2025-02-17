@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LogoBCG from "../../Assets/Logo BCG.png";
+import LogoBCG from "../../assets/Logo BCG.png";
 import "../../App.css";
 
 function Section1() {

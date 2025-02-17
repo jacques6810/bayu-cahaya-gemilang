@@ -1,10 +1,10 @@
 import React from "react";
-import LogoBCG from "../../Assets/Logo BCG.png";
-import BankBRI from "../../Assets/Bank BRI.png";
-import BankBJB from "../../Assets/Bank BJB.png";
-import BankBTN from "../../Assets/Bank BTN.png";
-import BankMandiri from "../../Assets/Bank Mandiri.png";
-import BankBSI from "../../Assets/Bank BSI.png";
+import LogoBCG from "../../assets/Logo BCG.png";
+import BankBRI from "../../assets/Bank BRI.png";
+import BankBJB from "../../assets/Bank BJB.png";
+import BankBTN from "../../assets/Bank BTN.png";
+import BankMandiri from "../../assets/Bank Mandiri.png";
+import BankBSI from "../../assets/Bank BSI.png";
 import "../../App.css";
 
 function Section2() {

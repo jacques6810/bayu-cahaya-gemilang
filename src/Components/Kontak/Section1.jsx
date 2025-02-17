@@ -1,5 +1,5 @@
 import React from "react";
-import LogoBCG from "../../Assets/Logo BCG.png";
+import LogoBCG from "../../assets/Logo BCG.png";
 
 function Section1() {
   return (
