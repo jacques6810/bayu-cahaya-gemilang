@@ -17,9 +17,22 @@ const center = {
 function Section1() {
   return (
     <div className="flex flex-col items-center justify-center py-20 mx-10">
-      <img src={LogoBCG} alt="Logo BCG" className="h-16 w-32 mb-7" />
-      <h1 className="text-4xl font-semibold text-center mb-5">HUBUNGI KAMI</h1>
-      <p className="text-thin text-sm text-center px-5 lg:px-40 xl:px-80">
+      <img
+        src={LogoBCG}
+        alt="Logo BCG"
+        className="h-16 w-32 mb-7"
+        data-aos="fade-up"
+      />
+      <h1
+        className="text-4xl font-semibold text-center mb-5"
+        data-aos="fade-up"
+      >
+        HUBUNGI KAMI
+      </h1>
+      <p
+        className="text-thin text-sm text-center px-5 lg:px-40 xl:px-80"
+        data-aos="fade-up"
+      >
         Hubungi kami{" "}
         <span className="text-primary-color font-semibold">
           sales marketing
@@ -33,7 +46,10 @@ function Section1() {
         {/* Bagian Lokasi */}
         <div className="flex flex-col w-full lg:w-1/2">
           {/* Google Maps */}
-          <div className="mt-20 w-full h-[250px] md:h-[300px] rounded-lg shadow-md">
+          <div
+            className="mt-20 w-full h-[250px] md:h-[300px] rounded-lg shadow-md"
+            data-aos="fade-up"
+          >
             <LoadScript googleMapsApiKey="AIzaSyDKIHGeWuvvktB4nl0mSGTGZEk0n-RdF6A">
               <GoogleMap
                 mapContainerStyle={containerStyle}
@@ -52,23 +68,30 @@ function Section1() {
             type="text"
             placeholder="Nama Lengkap"
             className="border border-gray-300 rounded-md p-3 mb-4 w-full"
+            data-aos="fade-up"
           />
           <input
             type="text"
             placeholder="Nomor Handphone"
             className="border border-gray-300 rounded-md p-3 mb-4 w-full"
+            data-aos="fade-up"
           />
           <input
             type="email"
             placeholder="Email"
             className="border border-gray-300 rounded-md p-3 mb-4 w-full"
+            data-aos="fade-up"
           />
           <textarea
             placeholder="Pesan anda"
             rows="4"
             className="border border-gray-300 rounded-md p-3 mb-4 w-full"
+            data-aos="fade-up"
           ></textarea>
-          <button className="bg-teal-500 text-white py-3 px-6 rounded-md font-semibold w-full transition duration-200 ease-in-out hover:bg-teal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
+          <button
+            className="bg-teal-500 text-white py-3 px-6 rounded-md font-semibold w-full transition duration-200 ease-in-out hover:bg-teal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95"
+            data-aos="fade-up"
+          >
             Kirim Pesan
           </button>
         </div>

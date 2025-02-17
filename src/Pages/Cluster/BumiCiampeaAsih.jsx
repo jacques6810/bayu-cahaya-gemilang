@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import "../../App.css";
@@ -44,6 +47,10 @@ function BumiCiampeaAsih() {
 
   const displayedImages = galleryImages.slice(currentIndex, currentIndex + 3);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -57,7 +64,10 @@ function BumiCiampeaAsih() {
         <div className="absolute w-full h-full bg-black opacity-50"></div>
 
         {/* Logo Cluster */}
-        <div className="absolute flex items-center justify-center inset-0">
+        <div
+          className="absolute flex items-center justify-center inset-0"
+          data-aos="fade-up"
+        >
           <img
             src={BCA_Logo}
             alt="Cluster Logo"
@@ -68,8 +78,15 @@ function BumiCiampeaAsih() {
 
       {/* Section Title */}
       <div className="flex flex-col items-center justify-center py-20">
-        <img src={LogoBCG} alt="Logo BCG" className="h-15 w-30 mb-7" />
-        <h1 className="text-4xl font-semibold mb-20">Informasi Cluster</h1>
+        <img
+          src={LogoBCG}
+          alt="Logo BCG"
+          className="h-15 w-30 mb-7"
+          data-aos="fade-up"
+        />
+        <h1 className="text-4xl font-semibold mb-20" data-aos="fade-up">
+          Informasi Cluster
+        </h1>
 
         {/* Gambar utama */}
         <div className="flex justify-center max-h-[500px] max-w-6xl mx-auto object-cover">
@@ -77,11 +94,15 @@ function BumiCiampeaAsih() {
             src={mainImage}
             alt="Cluster"
             className="w-3/4 rounded-xl shadow-lg"
+            data-aos="fade-up"
           />
         </div>
 
         {/* Gallery */}
-        <div className="flex justify-center items-center gap-4 mt-6">
+        <div
+          className="flex justify-center items-center gap-4 mt-6"
+          data-aos="fade-up"
+        >
           <button
             onClick={handlePrevClick}
             className="text-gray-500 hover:text-gray-700"
@@ -108,7 +129,10 @@ function BumiCiampeaAsih() {
         </div>
 
         {/* Tab Navigasi */}
-        <div className="flex justify-center mt-15 border-b border-gray-300">
+        <div
+          className="flex justify-center mt-15 border-b border-gray-300"
+          data-aos="fade-up"
+        >
           {["Deskripsi", "Spesifikasi"].map((tab) => (
             <button
               key={tab}
@@ -125,9 +149,12 @@ function BumiCiampeaAsih() {
         </div>
 
         {/* Konten Tab */}
-        <div className="w-3/4 mx-auto mt-5 text-justify text-gray-700">
+        <div
+          className="w-3/4 mx-auto mt-5 text-justify text-gray-700"
+          data-aos="fade-up"
+        >
           {activeTab === "Deskripsi" ? (
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto" data-aos="fade-up">
               <p>
                 Bukit Ciampea Asri Bogor menghadirkan hunian eksklusif dengan
                 lingkungan yang aman, nyaman, dan asri. Mengusung konsep rumah
