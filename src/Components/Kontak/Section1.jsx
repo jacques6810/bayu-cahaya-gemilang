@@ -1,18 +1,5 @@
 import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import LogoBCG from "../../Assets/Logo BCG.png";
-
-// Google Maps configuration
-const containerStyle = {
-  width: "100%",
-  height: "300px",
-  borderRadius: "10px",
-};
-
-const center = {
-  lat: -6.303983,
-  lng: 106.683556,
-};
 
 function Section1() {
   return (
@@ -47,18 +34,17 @@ function Section1() {
         <div className="flex flex-col w-full lg:w-1/2">
           {/* Google Maps */}
           <div
-            className="mt-20 w-full h-[250px] md:h-[300px] rounded-lg shadow-md"
+            className="mt-20 w-full h-[250px] md:h-[300px] rounded-lg shadow-2xl"
             data-aos="fade-up"
           >
-            <LoadScript googleMapsApiKey="AIzaSyDKIHGeWuvvktB4nl0mSGTGZEk0n-RdF6A">
-              <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={center}
-                zoom={15}
-              >
-                <Marker position={center} />
-              </GoogleMap>
-            </LoadScript>
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              style={{ border: 0, borderRadius: "10px" }}
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDKIHGeWuvvktB4nl0mSGTGZEk0n-RdF6A&q=-6.303983,106.683556`}
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
 
