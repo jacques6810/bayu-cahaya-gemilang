@@ -146,7 +146,7 @@ function BumiCiampeaAsih() {
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-5 max-w-4xl mx-auto">
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 lg:mr-40 mx-auto">
                 {[
                   {
                     text: "Batu kali Beton bertulang (Pondasi)",
