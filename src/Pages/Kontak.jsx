@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import Navbar from "../Components/Navbar";
-import Header from "../Components/Kontak/Header";
+import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import LogoBCG from "../Assets/Logo BCG.png";
 import IconContact from "../assets/Icon Contact.png";
@@ -23,7 +23,7 @@ function Kontak() {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header title="KONTAK KAMI" subtitle="Silahkan hubungi kami dibawah." />
 
       {/* Section Hubungi Kami */}
       <div className="flex flex-col items-center justify-center py-20 mx-10">
