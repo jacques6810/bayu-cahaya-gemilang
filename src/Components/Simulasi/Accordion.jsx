@@ -4,7 +4,10 @@ const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-300 mb-2 mt-5 rounded-lg overflow-hidden">
+    <div
+      className="border border-gray-300 mb-2 mt-5 rounded-lg overflow-hidden"
+      data-aos="fade-up"
+    >
       {/* Accordion Header */}
       <button
         onClick={() => setIsOpen(!isOpen)}

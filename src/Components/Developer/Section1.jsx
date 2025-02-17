@@ -7,11 +7,24 @@ import "../../App.css";
 function Section1() {
   return (
     <div className="flex flex-col items-center py-20 px-10 lg:px-20 xl:px-60">
-      <img src={LogoBCG} alt="Logo BCG" className="h-15 w-30 mb-7" />
-      <h1 className="text-4xl font-semibold text-center mb-5">CLUSTER</h1>
+      <img
+        src={LogoBCG}
+        alt="Logo BCG"
+        className="h-15 w-30 mb-7"
+        data-aos="fade-up"
+      />
+      <h1
+        className="text-4xl font-semibold text-center mb-5"
+        data-aos="fade-up"
+      >
+        CLUSTER
+      </h1>
       <div className="grid gap-6 my-10 w-full object-cover grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {/* Artha Soreang Living */}
-        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group">
+        <div
+          className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
+          data-aos="fade-up"
+        >
           <img
             src={ASL}
             alt=""
@@ -29,7 +42,10 @@ function Section1() {
         </div>
 
         {/* Bukit Ciampea Asih */}
-        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group">
+        <div
+          className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
+          data-aos="fade-up"
+        >
           <img
             src={BCA}
             alt=""
@@ -47,7 +63,10 @@ function Section1() {
         </div>
 
         {/* Pasanggrahan Hill */}
-        <div className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group">
+        <div
+          className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
+          data-aos="fade-up"
+        >
           <img
             src={ASL}
             alt=""

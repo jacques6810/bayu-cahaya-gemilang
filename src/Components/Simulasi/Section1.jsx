@@ -17,14 +17,24 @@ function Section1() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center py-20">
-        <img src={LogoBCG} alt="Logo BCG" className="h-15 w-30 mb-7" />
-        <h1 className="text-4xl font-semibold text-center mb-5">SIMULASI</h1>
+        <img
+          src={LogoBCG}
+          alt="Logo BCG"
+          className="h-15 w-30 mb-7"
+          data-aos="fade-up"
+        />
+        <h1
+          className="text-4xl font-semibold text-center mb-5"
+          data-aos="fade-up"
+        >
+          SIMULASI
+        </h1>
       </div>
       {/* Form Simulasi */}
       <div className="max-w-4xl lg:max-w-6xl mx-auto px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Harga Properti */}
-          <div>
+          <div data-aos="fade-up">
             <label className="block text-gray-700 font-semibold mb-2">
               HARGA PROPERTI
             </label>
@@ -37,7 +47,7 @@ function Section1() {
           </div>
 
           {/* Jangka Waktu */}
-          <div>
+          <div data-aos="fade-up">
             <label className="block text-gray-700 font-semibold mb-2">
               JANGKA WAKTU
             </label>
@@ -55,7 +65,7 @@ function Section1() {
           </div>
 
           {/* Uang Muka */}
-          <div>
+          <div data-aos="fade-up">
             <label className="block text-gray-700 font-semibold mb-2">
               UANG MUKA / DP 20%
             </label>
@@ -68,7 +78,7 @@ function Section1() {
           </div>
 
           {/* Estimasi Suku Bunga */}
-          <div>
+          <div data-aos="fade-up">
             <label className="block text-gray-700 font-semibold mb-2">
               ESTIMASI SUKU BUNGA / TAHUN
             </label>
@@ -82,7 +92,10 @@ function Section1() {
         </div>
 
         {/* Hasil Simulasi */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6"
+          data-aos="fade-up"
+        >
           <div className="bg-teal-500 text-white p-4 text-center rounded-lg">
             <h2 className="font-semibold">ANGSURAN PERBULAN</h2>
             <p className="text-lg font-bold">
