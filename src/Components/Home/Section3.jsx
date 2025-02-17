@@ -28,7 +28,10 @@ const Section3 = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center mx-auto md:w-full mb-4 md:mb-0 w-full lg:w-full p-4">
+    <div
+      className="flex flex-col items-center mx-auto md:w-full mb-4 md:mb-0 w-full lg:w-full p-4"
+      data-aos="fade-up"
+    >
       <div
         id="section-3"
         className="flex flex-col items-center w-full bg-white p-6 md:p-10"

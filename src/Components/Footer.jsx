@@ -6,7 +6,7 @@ import IconEmail from "../assets/Icon Email.png";
 
 function Footer() {
   return (
-    <div>
+    <div data-aos="fade-up">
       {/* Footer */}
       <footer className="flex flex-col lg:flex-row gap-2 items-center justify-between w-full bg-gray-800 text-white text-center py-20 px-20 mt-30">
         {/* Logo */}

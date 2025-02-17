@@ -4,10 +4,18 @@ import "../App.css";
 function Header({ title, subtitle }) {
   return (
     <div className="flex flex-col items-center justify-center py-30 mt-20 background-gradient">
-      <h1 className="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+      <h1
+        className="text-4xl lg:text-5xl font-extrabold text-white mb-4"
+        data-aos="fade-up"
+      >
         {title}
       </h1>
-      <p className="text-xs lg:text-base text-white opacity-80">{subtitle}</p>
+      <p
+        className="text-xs lg:text-base text-white opacity-80"
+        data-aos="fade-up"
+      >
+        {subtitle}
+      </p>
     </div>
   );
 }

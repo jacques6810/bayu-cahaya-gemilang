@@ -8,6 +8,7 @@ function Section2() {
     <div
       id="section-2"
       className="flex flex-col md:items-center md:flex-col lg:flex-col xl:flex-row relative z-0 w-full bg-white mt-30 p-4 md:p-22 gap-4"
+      data-aos="fade-up"
     >
       <div className="flex flex-col items-center mx-auto md:mx-20 mb-4 md:mb-0 w-full xl:w-1/2 p-4">
         <img src={Logo} alt="Logo BCG" className="h-15 w-30 mb-7" />

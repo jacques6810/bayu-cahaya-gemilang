@@ -20,7 +20,10 @@ function Section1() {
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         {/* Information Content */}
-        <div className="flex flex-col mx-6 items-center text-center md:text-left">
+        <div
+          className="flex flex-col mx-6 items-center text-center md:text-left"
+          data-aos="fade-up"
+        >
           <h1 className="items-center text-white font-extrabold text-5xl lg:text-6xl sm:text-center">
             BAYU CAHAYA GEMILANG
           </h1>

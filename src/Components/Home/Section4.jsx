@@ -7,6 +7,7 @@ const Section4 = () => {
     <div
       id="section-4"
       className="flex flex-col text-center items-center w-full mx-auto p-6 mt-15 sm:px-20 md:p-10"
+      data-aos="fade-up"
     >
       <img
         src={BackgroundGambar}

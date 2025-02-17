@@ -9,8 +9,15 @@ import "../../App.css";
 function Section1() {
   return (
     <div className="flex flex-col items-center justify-center my-20 mx-10">
-      <img src={LogoBCG} alt="Logo BCG" className="h-15 w-30 mb-7" />
-      <h1 className="text-4xl font-semibold mb-20">Siapa Kami?</h1>
+      <img
+        src={LogoBCG}
+        alt="Logo BCG"
+        className="h-15 w-30 mb-7"
+        data-aos="fade-up"
+      />
+      <h1 className="text-4xl font-semibold mb-20" data-aos="fade-up">
+        Siapa Kami?
+      </h1>
 
       {/* Profil Perusahaan */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-center text-justify max-w-6xl w-full gap-10 mb-16">
@@ -18,8 +25,12 @@ function Section1() {
           src={BackgroundImage}
           alt="Profil Perusahaan"
           className="w-full md:w-1/2 h-70 object-cover rounded-lg"
+          data-aos="fade-up"
         />
-        <div className="w-full md:w-1/2 flex flex-col justify-center h-full">
+        <div
+          className="w-full md:w-1/2 flex flex-col justify-center h-full"
+          data-aos="fade-up"
+        >
           <div className="flex flex-row gap-5">
             <img src={IconCompany} alt="" className="h-8 w-8" />
             <h1 className="text-2xl lg:text-3xl font-bold text-secondary-color text-justify">
@@ -43,8 +54,12 @@ function Section1() {
           src={BackgroundImage}
           alt="Legalitas & Pendirian"
           className="w-full md:w-1/2 h-70 object-cover rounded-lg"
+          data-aos="fade-up"
         />
-        <div className="w-full md:w-1/2 flex flex-col justify-center h-full">
+        <div
+          className="w-full md:w-1/2 flex flex-col justify-center h-full"
+          data-aos="fade-up"
+        >
           <div className="flex flex-row gap-5">
             <img src={IconLegality} alt="" className="h-8 w-8" />
             <h1 className="text-2xl lg:text-3xl font-bold text-secondary-color text-justify">
@@ -67,8 +82,12 @@ function Section1() {
           src={BackgroundImage}
           alt="Komitmen & Pengembangan"
           className="w-full md:w-1/2 h-70 object-cover rounded-lg"
+          data-aos="fade-up"
         />
-        <div className="w-full md:w-1/2 flex flex-col justify-center h-full">
+        <div
+          className="w-full md:w-1/2 flex flex-col justify-center h-full"
+          data-aos="fade-up"
+        >
           <div className="flex flex-row gap-5">
             <img src={IconCommitment} alt="" className="h-8 w-8" />
             <h1 className="text-2xl lg:text-3xl font-bold text-secondary-color text-justify">

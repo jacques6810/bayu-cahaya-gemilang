@@ -4,7 +4,10 @@ import "../../App.css";
 
 function Section2() {
   return (
-    <div className="flex flex-col items-center bg-gray-100 py-20 px-10">
+    <div
+      className="flex flex-col items-center bg-gray-100 py-20 px-10"
+      data-aos="fade-up"
+    >
       <img src={LogoBCG} alt="Logo BCG" className="h-15 w-30 mb-7" />
       <h1 className="text-4xl font-semibold text-center mb-5">VISI & MISI</h1>
       <p className="text-lg text-center max-w-4xl mt-4">
