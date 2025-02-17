@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../assets/Logo BCG.png";
 import "../../App.css";
-import CobaGambar from "../../assets/CobaGambar.png";
+import HeroImage from "../../assets/HeroImage.png";
 
 function Section2() {
   return (
@@ -25,7 +25,7 @@ function Section2() {
       </div>
       <div className="flex flex-col justify-center items-center p-4 md:p-4 mx-auto md:mx-20 w-full xl:w-1/2 h-auto overflow-hidden">
         <img
-          src={CobaGambar}
+          src={HeroImage}
           alt=""
           className="w-full xl:h-full xl:w-full sm:h-100 sm:w-100"
         />
