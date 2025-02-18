@@ -2,6 +2,7 @@ import React from "react";
 import LogoBCG from "../../assets/Logo BCG.png";
 import ASL from "../../assets/Background Home.png";
 import BCA from "../../assets/BukitCiampeaAsih_DeveloperBG.jpg";
+import ClusterComponent from "./ClusterComponent";
 import "../../App.css";
 
 function Section1() {
@@ -21,67 +22,13 @@ function Section1() {
       </h1>
       <div className="grid gap-6 my-10 w-full object-cover grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {/* Artha Soreang Living */}
-        <div
-          className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
-          data-aos="fade-up"
-        >
-          <img
-            src={ASL}
-            alt=""
-            className="w-full h-full object-cover rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
-          />
-          <div className="absolute inset-0 rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
-          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5">
-            <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
-              ARTHA SOREANG LIVING
-            </h1>
-            <button className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-              <a href="/developer/bumi-ciampea-asih">Info Selengkapnya</a>
-            </button>
-          </div>
-        </div>
+        <ClusterComponent image={ASL} title="ARTHA SOREANG LIVING" />
 
         {/* Bukit Ciampea Asih */}
-        <div
-          className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
-          data-aos="fade-up"
-        >
-          <img
-            src={BCA}
-            alt=""
-            className="w-full h-full object-cover rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
-          />
-          <div className="absolute inset-0 rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
-          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5">
-            <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
-              BUKIT CIAMPEA ASIH
-            </h1>
-            <button className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-              <a href="/developer/bumi-ciampea-asih">Info Selengkapnya</a>
-            </button>
-          </div>
-        </div>
+        <ClusterComponent image={BCA} title="BUKIT CIAMPEA ASIH" />
 
         {/* Pasanggrahan Hill */}
-        <div
-          className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
-          data-aos="fade-up"
-        >
-          <img
-            src={ASL}
-            alt=""
-            className="w-full h-full object-cover rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
-          />
-          <div className="absolute inset-0 rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
-          <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5">
-            <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
-              PASANGGRAHAN HILL
-            </h1>
-            <button className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-              <a href="/developer/bumi-ciampea-asih">Info Selengkapnya</a>
-            </button>
-          </div>
-        </div>
+        <ClusterComponent image={ASL} title="PASANGGRAHAN HILL" />
       </div>
     </div>
   );

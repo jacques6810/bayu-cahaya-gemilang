@@ -14,8 +14,10 @@ function Home() {
     AOS.init({ duration: 1000 });
   }, []);
 
+  // sm:border-2 sm:border-red-500 md:border-2 md:border-green-500 lg:border-2 lg:border-blue-500 xl:border-2 xl:border-yellow-500
+
   return (
-    <div className="relative w-full h-full sm:border-2 sm:border-red-500 md:border-2 md:border-green-500 lg:border-2 lg:border-blue-500 xl:border-2 xl:border-yellow-500">
+    <div className="relative w-full h-full">
       <Navbar />
       <Section1 data-aos="fade-up" />
       <Section2 data-aos="fade-up" />
