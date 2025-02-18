@@ -25,7 +25,7 @@ function Section1() {
           data-aos="fade-up"
         >
           <h1 className="items-center text-white font-extrabold text-5xl lg:text-6xl sm:text-center">
-            BAYU CAHAYA GEMILANG
+            BAYU CAHAYA GEMILAN
           </h1>
           <p className="text-xl text-white mt-5 backdrop-opacity-10">
             Bangun rumah impian anda menjadi kenyataan.
