@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LogoFooter from "../assets/Logo BCG Footer.png";
 import IconLinkedin from "../assets/Icon Linkedin.png";
 import IconContact from "../assets/Icon Contact.png";
@@ -18,18 +19,19 @@ function Footer() {
         <div className="flex flex-col gap-5 items-center lg:items-start text-left mb-6 lg:mb-0">
           <h5 className="font-bold text-2xl lg:text-lg">Halaman</h5>
           {[
-            "Beranda",
-            "Tentang Kami",
-            "Developer",
-            "Simulasi KPR",
-            "Kontak Kami",
+            { name: "Beranda", path: "/" },
+            { name: "Tentang Kami", path: "/about" },
+            { name: "Developer", path: "/developer" },
+            { name: "Simulasi KPR", path: "/simulasi-kpr" },
+            { name: "Kontak Kami", path: "/kontak-kami" },
           ].map((item, index) => (
-            <a
+            <Link
               key={index}
+              to={item.path}
               className="font-light text-sm hover:text-gray-300 cursor-pointer"
             >
-              {item}
-            </a>
+              {item.name}
+            </Link>
           ))}
         </div>
 

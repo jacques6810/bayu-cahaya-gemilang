@@ -8,10 +8,12 @@ import Simulasi from "./Pages/Simulasi";
 import Kontak from "./Pages/Kontak";
 import NotFound from "./Pages/NotFound";
 import BumiCiampeaAsih from "./Pages/Cluster/BumiCiampeaAsih";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

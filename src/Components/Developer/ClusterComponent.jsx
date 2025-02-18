@@ -9,9 +9,9 @@ function ClusterComponent({ image, title }) {
       <img
         src={image}
         alt=""
-        className="w-full h-full object-cover rounded-xl transform transition-transform duration-300 ease-in-out group-hover:scale-110"
+        className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 ease-in-out group-hover:scale-110"
       />
-      <div className="absolute inset-0 rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
+      <div className="absolute inset-0 hover:rounded-none rounded-lg bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-30"></div>
       <div className="absolute bottom-0 w-full flex flex-col items-center justify-center pb-6 mb-5">
         <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
           {title}
