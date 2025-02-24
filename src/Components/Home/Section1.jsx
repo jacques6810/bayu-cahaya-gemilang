@@ -24,17 +24,21 @@ function Section1() {
           className="flex flex-col mx-6 items-center text-center md:text-left"
           data-aos="fade-up"
         >
-          <h1 className="items-center text-white font-extrabold text-5xl lg:text-6xl sm:text-center">
-            BAYU CAHAYA GEMILAN
+          <h1 className="items-center text-white font-extrabold text-3xl md:text-5xl lg:text-6xl sm:text-center">
+            BAYU CAHAYA GEMILANG
           </h1>
-          <p className="text-xl text-white mt-5 backdrop-opacity-10">
+          <p className="text-xs px-10 md:px-0 md:text-xl text-white mt-5 backdrop-opacity-10">
             Bangun rumah impian anda menjadi kenyataan.
           </p>
           <button
-            className="flex items-center p-2 px-4 mt-5 background-secondary-color font-bold text-white tracking-wider border-3 rounded-xl transform transition-transform duration-300 hover:scale-105"
+            className="flex items-center text-xs p-2 px-3 md:text-base md:px-4 mt-5 background-secondary-color font-bold text-white tracking-wider border-3 rounded-xl transform transition-transform duration-300 hover:scale-105"
             onClick={scrollToSection2}
           >
-            <img src={InfoIcon} alt="Info Icon" className="h-7 w-7 mr-2" />
+            <img
+              src={InfoIcon}
+              alt="Info Icon"
+              className="h-5 w-5 md:h-6 md:w-6 mr-2"
+            />
             Lihat Selengkapnya
           </button>
         </div>
