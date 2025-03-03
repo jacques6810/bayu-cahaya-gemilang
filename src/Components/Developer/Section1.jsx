@@ -24,8 +24,8 @@ function Section1() {
         {/* Artha Soreang Living */}
         <ClusterComponent image={ASL} title="ARTHA SOREANG LIVING" />
 
-        {/* Bukit Ciampea Asih */}
-        <ClusterComponent image={BCA} title="BUKIT CIAMPEA ASIH" />
+        {/* Bukit Ciampea Asri */}
+        <ClusterComponent image={BCA} title="BUKIT CIAMPEA ASRI" />
 
         {/* Pasanggrahan Hill */}
         <ClusterComponent image={ASL} title="PASANGGRAHAN HILL" />
