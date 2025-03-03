@@ -6,8 +6,9 @@ function Section1() {
   const [hargaProperti, setHargaProperti] = useState(400000000);
   const [sukuBunga, setSukuBunga] = useState(7.7);
   const [jangkaWaktu, setJangkaWaktu] = useState(15);
+  const [dpPersen, setDpPersen] = useState(0);
 
-  const dp = hargaProperti * 0.2; // Calculate DP as 20% of hargaProperti
+  const dp = (hargaProperti * dpPersen) / 100;
   const pinjaman = hargaProperti - dp;
   const bungaPerBulan = sukuBunga / 100 / 12;
   const totalBulan = jangkaWaktu * 12;
@@ -64,17 +65,22 @@ function Section1() {
             </select>
           </div>
 
-          {/* Uang Muka */}
+          {/* Pilihan DP */}
           <div data-aos="fade-up">
             <label className="block text-gray-700 font-semibold mb-2">
-              UANG MUKA / DP 20%
+              UANG MUKA / DP
             </label>
-            <input
-              type="number"
-              value={dp}
-              readOnly
-              className="w-full p-3 border rounded-lg bg-gray-100 cursor-not-allowed"
-            />
+            <select
+              value={dpPersen}
+              onChange={(e) => setDpPersen(Number(e.target.value))}
+              className="w-full p-3 border rounded-lg"
+            >
+              {[0, 10, 15, 20].map((percent) => (
+                <option key={percent} value={percent}>
+                  {percent}%
+                </option>
+              ))}
+            </select>
           </div>
 
           {/* Estimasi Suku Bunga */}
