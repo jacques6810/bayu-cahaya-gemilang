@@ -1,5 +1,5 @@
 import React from "react";
-import BackgroundImage from "../../assets/Background Home.png";
+import BackgroundImage from "../../assets/HomeBackground.jpg";
 import InfoIcon from "../../assets/Icon Information.svg";
 import "../../App.css";
 
