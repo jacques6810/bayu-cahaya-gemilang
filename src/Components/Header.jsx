@@ -3,7 +3,7 @@ import "../App.css";
 
 function Header({ title, subtitle }) {
   return (
-    <div className="flex flex-col items-center justify-center py-30 mt-20 background-gradient">
+    <div className="flex flex-col items-center justify-center py-30 mt-18 sm:mt-22 background-gradient">
       <h1
         className="text-4xl lg:text-5xl font-extrabold text-white mb-4"
         data-aos="fade-up"
