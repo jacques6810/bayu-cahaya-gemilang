@@ -54,7 +54,7 @@ function BumiCiampeaAsih() {
   return (
     <div>
       <Navbar />
-      <div className="relative flex flex-col items-center justify-center mt-20">
+      <div className="relative flex flex-col items-center justify-center mt-18 sm:mt-22">
         {/* Background */}
         <img
           src={BCA_Background}
