@@ -1,4 +1,5 @@
 import React from "react";
+import Section from "../../Components/Section";
 import LogoBCG from "../../assets/Logo BCG.png";
 import BankBRI from "../../assets/Bank BRI.png";
 import BankBJB from "../../assets/Bank BJB.png";
@@ -11,18 +12,9 @@ function Section2() {
   return (
     <div className="w-full bg-gray-200">
       <div className="flex flex-col items-center justify-center py-20 mx-20 mt-20">
-        <img
-          src={LogoBCG}
-          alt=""
-          className="h-15 w-30 mb-7"
-          data-aos="fade-up"
-        />
-        <h1
-          className="text-4xl font-semibold text-center mb-5"
-          data-aos="fade-up"
-        >
-          KERJASAMA BANK
-        </h1>
+        <Section title="KERJASAMA BANK" />
+
+        {/* Bank Mitra */}
         <div
           className="grid justify-center gap-2 my-10 gap-5 sm:gap-15 md:px-5 lg:px-20 lg:gap-20 items-center justify-items-center w-full object-cover grid-cols-3 md:grid-cols-5"
           data-aos="fade-up"

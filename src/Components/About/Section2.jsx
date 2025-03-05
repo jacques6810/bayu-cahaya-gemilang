@@ -1,22 +1,13 @@
 import React from "react";
+import Section from "../../Components/Section";
 import LogoBCG from "../../assets/Logo BCG.png";
 import "../../App.css";
 
 function Section2() {
   return (
     <div className="flex flex-col items-center bg-gray-100 py-20 px-10">
-      <img
-        src={LogoBCG}
-        alt="Logo BCG"
-        className="h-15 w-30 mb-7"
-        data-aos="fade-up"
-      />
-      <h1
-        className="text-4xl font-semibold text-center mb-5"
-        data-aos="fade-up"
-      >
-        VISI & MISI
-      </h1>
+      <Section title="VISI & MISI" />
+
       <p className="text-lg text-center max-w-4xl mt-4" data-aos="fade-up">
         Menjadi pengembang yang unggul dan menjadi solusi bagi masyarakat dalam
         memenuhi kebutuhan papan (tempat tinggal) dengan nuansa asri.

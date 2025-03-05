@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Section from "../../Components/Section";
 import LogoBCG from "../../assets/Logo BCG.png";
 
 const locations = [
   {
-    name: "Bukit Ciampea Asih",
+    name: "Bukit Ciampea Asri",
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.795169437701!2d106.68941573853812!3d-6.57327349835504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69db19f30129ff%3A0xa19af266db849527!2sBukit%20Ciampea%20Asri%20A16!5e0!3m2!1sen!2id!4v1740970882470!5m2!1sen!2id",
   },
@@ -36,18 +37,9 @@ function Section1() {
 
   return (
     <div className="flex flex-col items-center justify-center py-20 mx-10">
-      <img
-        src={LogoBCG}
-        alt="Logo BCG"
-        className="h-16 w-32 mb-7"
-        data-aos="fade-up"
-      />
-      <h1
-        className="text-4xl font-semibold text-center mb-5"
-        data-aos="fade-up"
-      >
-        HUBUNGI KAMI
-      </h1>
+      <Section title="HUBUNGI KAMI" />
+
+      {/* Kontak Info */}
       <p
         className="text-thin text-sm text-center px-5 lg:px-40 xl:px-80"
         data-aos="fade-up"

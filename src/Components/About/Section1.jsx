@@ -1,4 +1,5 @@
 import React from "react";
+import Section from "../../Components/Section";
 import BackgroundImage from "../../assets/Background Home.png";
 import IconCompany from "../../assets/Icon Company.png";
 import IconLegality from "../../assets/Icon Legality.png";
@@ -9,18 +10,10 @@ import "../../App.css";
 function Section1() {
   return (
     <div className="flex flex-col items-center justify-center my-20 mx-10">
-      <img
-        src={LogoBCG}
-        alt="Logo BCG"
-        className="h-15 w-30 mb-7"
-        data-aos="fade-up"
-      />
-      <h1 className="text-4xl font-semibold mb-20" data-aos="fade-up">
-        Siapa Kami?
-      </h1>
+      <Section title="SIAPA KAMI" />
 
       {/* Profil Perusahaan */}
-      <div className="flex flex-col md:flex-row-reverse items-center md:items-center text-justify max-w-6xl w-full gap-10 mb-16">
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-center text-justify max-w-6xl w-full gap-10 mt-10 mb-16">
         <img
           src={BackgroundImage}
           alt="Profil Perusahaan"

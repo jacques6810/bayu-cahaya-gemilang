@@ -5,10 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 import ArthaSoreangLiving from "../../assets/Background Home.png";
 import BukitCiampeaAsih from "../../assets/BukitCiampeaAsih_DeveloperBG.jpg";
 import Logo from "../../assets/Logo BCG.png";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import icon arrow
+import Section from "../../Components/Section";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Section3 = () => {
-  const sliderRef = React.useRef(null); // Referensi untuk kontrol slider
+  const sliderRef = React.useRef(null);
 
   const settings = {
     dots: false,
@@ -33,18 +34,7 @@ const Section3 = () => {
         id="section-3"
         className="flex flex-col items-center w-full bg-white p-6 md:p-10"
       >
-        <img
-          src={Logo}
-          alt="Logo BCG"
-          className="h-12 md:h-16 mb-5"
-          data-aos="fade-up"
-        />
-        <h2
-          className="text-center max-w-xl font-semibold text-3xl md:text-4xl lg:text-4xl leading-snug mb-4"
-          data-aos="fade-up"
-        >
-          Developer
-        </h2>
+        <Section title="DEVELOPER" />
 
         <div className="relative w-full max-w-5xl" data-aos="fade-up">
           {/* Tombol Panah Kiri */}
