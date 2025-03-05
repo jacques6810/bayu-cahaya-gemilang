@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "../../Components/Navbar";
+import Section from "../../Components/Section";
 import Footer from "../../Components/Footer";
 import "../../App.css";
 import BCA_Background from "../../assets/BCA Background.jpg";
@@ -78,18 +79,10 @@ function BumiCiampeaAsih() {
 
       {/* Section Title */}
       <div className="flex flex-col items-center justify-center py-20">
-        <img
-          src={LogoBCG}
-          alt="Logo BCG"
-          className="h-15 w-30 mb-7"
-          data-aos="fade-up"
-        />
-        <h1 className="text-4xl font-semibold mb-20" data-aos="fade-up">
-          Informasi Cluster
-        </h1>
+        <Section title="Informasi Cluster" />
 
         {/* Gambar utama */}
-        <div className="flex justify-center max-h-[500px] max-w-6xl mx-auto object-cover">
+        <div className="flex justify-center max-h-[500px] max-w-6xl mt-10 mx-auto object-cover">
           <img
             src={mainImage}
             alt="Cluster"
