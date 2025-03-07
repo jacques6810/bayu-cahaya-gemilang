@@ -10,7 +10,7 @@ import NotFound from "./Pages/NotFound";
 import BumiCiampeaAsih from "./Pages/Cluster/BumiCiampeaAsih";
 import ScrollToTop from "./Components/ScrollToTop";
 import AdminLogin from "./Pages/Admin/Login";
-import AdminDashboard from "./Pages/Admin/Dashboard";
+import AdminHome from "./Pages/Admin/AdminHome";
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
         <Route path="/simulasi-kpr" element={<Simulasi />} />
         <Route path="/kontak-kami" element={<Kontak />} />
         <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminHome />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Router>

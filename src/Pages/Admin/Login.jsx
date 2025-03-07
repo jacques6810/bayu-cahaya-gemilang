@@ -5,7 +5,7 @@ import "../../App.css";
 function Login() {
   return (
     <div className="flex items-center justify-center w-full h-screen bg-gray-100">
-      <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md">
+      <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md mx-5">
         <div className="flex justify-center mb-6">
           <img src={LogoBCG} alt="Logo" className="h-16" />
         </div>
@@ -21,7 +21,7 @@ function Login() {
             type="text"
             id="username"
             name="username"
-            placeholder="Username"
+            placeholder="username"
             className="mb-4 p-2 border border-gray-300 rounded"
           />
           <label htmlFor="password" className="mb-2 font-medium">
@@ -31,14 +31,14 @@ function Login() {
             type="password"
             id="password"
             name="password"
-            placeholder="Password"
+            placeholder="password"
             className="mb-6 p-2 border border-gray-300 rounded"
           />
           <button
             type="submit"
             className="bg-teal-500 text-white py-2 rounded hover:bg-teal-600 transition duration-300"
           >
-            Login
+            <a href="/admin/dashboard">Login</a>
           </button>
         </form>
       </div>
