@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "../../Components/Section";
-import LogoBCG from "../../assets/Logo BCG.png";
 import BankBRI from "../../assets/Bank BRI.png";
 import BankBJB from "../../assets/Bank BJB.png";
 import BankBTN from "../../assets/Bank BTN.png";
@@ -8,11 +7,11 @@ import BankMandiri from "../../assets/Bank Mandiri.png";
 import BankBSI from "../../assets/Bank BSI.png";
 import "../../App.css";
 
-function Section2() {
+function Section2({ data }) {
   return (
     <div className="w-full bg-gray-200">
       <div className="flex flex-col items-center justify-center py-20 mx-20 mt-20">
-        <Section title="KERJASAMA BANK" />
+        <Section title={data.title} />
 
         {/* Bank Mitra */}
         <div
