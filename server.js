@@ -3,6 +3,7 @@ import mysql from "mysql2";
 import cors from "cors";
 import dotenv from "dotenv";
 import homeRoutes from "./routes/homeRoutes.js";
+import clusterRoutes from "./routes/clusterRoutes.js";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ db.connect((err) => {
 
 // Routes
 app.use("/api/home", homeRoutes);
+app.use("/api/cluster", clusterRoutes);
 
 // Jalankan server
 app.listen(5000, () => {
