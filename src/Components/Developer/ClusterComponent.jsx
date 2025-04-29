@@ -1,6 +1,6 @@
 import React from "react";
 
-function ClusterComponent({ image, title }) {
+function ClusterComponent({ key, image, title }) {
   return (
     <div
       className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
