@@ -8,6 +8,7 @@ import aboutRoutes from "./routes/aboutRoutes.js";
 import aboutInfoRoutes from "./routes/aboutInfoRoutes.js";
 import aboutPointRoutes from "./routes/aboutPointRoutes.js";
 import developerRoutes from "./routes/developerRoutes.js";
+import kontakRoutes from "./routes/kontakRoutes.js";
 
 dotenv.config();
 
@@ -40,6 +41,7 @@ app.use("/api/about", aboutRoutes);
 app.use("/api/about-info", aboutInfoRoutes);
 app.use("/api/about-point", aboutPointRoutes);
 app.use("/api/developer", developerRoutes);
+app.use("/api/kontak", kontakRoutes);
 
 // Jalankan server
 app.listen(5000, () => {

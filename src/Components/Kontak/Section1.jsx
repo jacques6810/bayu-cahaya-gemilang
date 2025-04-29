@@ -1,55 +1,82 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Section from "../../Components/Section";
-import LogoBCG from "../../assets/Logo BCG.png";
 
-const locations = [
-  {
-    name: "Bukit Ciampea Asri",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.795169437701!2d106.68941573853812!3d-6.57327349835504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69db19f30129ff%3A0xa19af266db849527!2sBukit%20Ciampea%20Asri%20A16!5e0!3m2!1sen!2id!4v1740970882470!5m2!1sen!2id",
-  },
-  {
-    name: "Artha Soreang Living",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.7305903278384!2d107.5341914748108!3d-7.040914692961161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68edae774b400d%3A0x2bfd9ac05a53f18f!2sArtha%20Living%20Soreang!5e0!3m2!1sen!2sid!4v1740972374306!5m2!1sen!2sid",
-  },
-  {
-    name: "Pasanggrahan Hill",
-    mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.820847824335!2d107.70795307480951!3d-6.912012693087473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68dd267dcc1d7f%3A0x369c3b3d7cbd1065!2sCluster%20Pasanggrahan%20Hill!5e0!3m2!1sen!2sid!4v1740972222350!5m2!1sen!2sid",
-  },
-];
-
-function Section1() {
+function Section1({ data }) {
+  const [location, setLocations] = useState([]);
   const [currentLocationIndex, setCurrentLocationIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchClusters = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/cluster");
+        if (!response.ok) {
+          throw new Error("Failed to fetch clusters");
+        }
+        const data = await response.json();
+
+        // Mapping hanya ambil title dan link_location
+        const mappedLocation = data.map((cluster) => ({
+          title: cluster.title,
+          link_location: cluster.link_location,
+        }));
+
+        setLocations(mappedLocation);
+      } catch (error) {
+        console.error("Error fetching clusters:", error);
+      }
+    };
+
+    fetchClusters();
+  }, []);
 
   const handlePrev = () => {
     setCurrentLocationIndex((prevIndex) =>
-      prevIndex === 0 ? locations.length - 1 : prevIndex - 1
+      prevIndex === 0 ? location.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setCurrentLocationIndex((prevIndex) =>
-      prevIndex === locations.length - 1 ? 0 : prevIndex + 1
+      prevIndex === location.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // Helper untuk validasi URL Google Maps
+  const isValidMapUrl = (url) => {
+    return (
+      typeof url === "string" &&
+      url.startsWith("https://www.google.com/maps") &&
+      url.includes("embed")
+    );
+  };
+
+  // Saat data belum selesai di-fetch
+  if (location.length === 0) {
+    return (
+      <div className="flex justify-center items-center h-96">
+        <p className="text-gray-500">Loading lokasi...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center justify-center py-20 mx-10">
-      <Section title="HUBUNGI KAMI" />
+      <Section title={data.title} />
 
       {/* Kontak Info */}
       <p
         className="text-thin text-sm text-center px-5 lg:px-40 xl:px-80"
         data-aos="fade-up"
       >
-        Hubungi kami{" "}
-        <span className="text-primary-color font-semibold">
-          sales marketing
-        </span>{" "}
-        rumah Bayu Cahaya Gemilang yang selalu siap membantu anda mendapatkan
-        hunian rumah baru di Bumi Cahaya Gemilang.
+        {data.paragraph.split(/%%(.*?)%%/).map((part, index) =>
+          index % 2 === 1 ? (
+            <span key={index} className="font-semibold text-teal-600">
+              {part}
+            </span>
+          ) : (
+            part
+          )
+        )}
       </p>
 
       {/* Container Form & Lokasi */}
@@ -58,16 +85,22 @@ function Section1() {
         <div className="flex flex-col w-full lg:w-1/2">
           {/* Google Maps */}
           <div
-            className="mt-20 w-full h-[250px] md:h-[300px] rounded-lg shadow-2xl"
+            className="mt-20 w-full h-[250px] md:h-[300px] rounded-lg shadow-2xl bg-gray-100 flex items-center justify-center"
             data-aos="fade-up"
           >
-            <iframe
-              width="100%"
-              height="100%"
-              style={{ border: 0, borderRadius: "10px" }}
-              src={locations[currentLocationIndex].mapSrc}
-              allowFullScreen
-            ></iframe>
+            {isValidMapUrl(location[currentLocationIndex]?.link_location) ? (
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0, borderRadius: "10px" }}
+                src={location[currentLocationIndex]?.link_location}
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <div className="text-gray-500 text-center px-5">
+                Lokasi belum tersedia
+              </div>
+            )}
           </div>
 
           {/* Location Selector */}
@@ -79,7 +112,7 @@ function Section1() {
               &lt;
             </button>
             <h3 className="background-secondary-color text-center text-xs text-white font-semibold py-3 px-4 sm:px-6 sm:text-sm rounded-lg shadow-md">
-              {locations[currentLocationIndex].name}
+              {location[currentLocationIndex]?.title}
             </h3>
             <button
               onClick={handleNext}
