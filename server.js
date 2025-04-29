@@ -7,6 +7,7 @@ import clusterRoutes from "./routes/clusterRoutes.js";
 import aboutRoutes from "./routes/aboutRoutes.js";
 import aboutInfoRoutes from "./routes/aboutInfoRoutes.js";
 import aboutPointRoutes from "./routes/aboutPointRoutes.js";
+import developerRoutes from "./routes/developerRoutes.js";
 
 dotenv.config();
 
@@ -38,6 +39,7 @@ app.use("/api/cluster", clusterRoutes);
 app.use("/api/about", aboutRoutes);
 app.use("/api/about-info", aboutInfoRoutes);
 app.use("/api/about-point", aboutPointRoutes);
+app.use("/api/developer", developerRoutes);
 
 // Jalankan server
 app.listen(5000, () => {
