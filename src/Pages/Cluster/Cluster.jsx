@@ -8,7 +8,6 @@ import Footer from "../../Components/Footer";
 import "../../App.css";
 import BCA_Background from "../../assets/BCA Background.jpg";
 import BCA_Logo from "../../assets/BCA Logo.svg";
-import LogoBCG from "../../assets/Logo BCG.png";
 import Gallery_1 from "../../assets/Gallery BCA_1.jpg";
 import Gallery_2 from "../../assets/Gallery BCA_2.jpg";
 import Gallery_3 from "../../assets/Gallery BCA_3.jpg";
@@ -27,7 +26,7 @@ import IconPintuKamar from "../../assets/IconSpesifikasi/Icon PintuKamar BCA.png
 import IconJendela from "../../assets/IconSpesifikasi/Icon Jendela BCA.png";
 import IconPlafind from "../../assets/IconSpesifikasi/Icon Plafind BCA.png";
 
-function BumiCiampeaAsih() {
+function Cluster() {
   const [activeTab, setActiveTab] = useState("Deskripsi");
   const [mainImage, setMainImage] = useState(BCA_Background);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,6 +54,8 @@ function BumiCiampeaAsih() {
   return (
     <div>
       <Navbar />
+
+      {/* Header */}
       <div className="relative flex flex-col items-center justify-center mt-20">
         {/* Background */}
         <img
@@ -240,4 +241,4 @@ function BumiCiampeaAsih() {
   );
 }
 
-export default BumiCiampeaAsih;
+export default Cluster;

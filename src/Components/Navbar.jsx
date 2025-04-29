@@ -52,20 +52,20 @@ function Navbar() {
         setSelected("BERANDA");
       }
     } else {
-      switch (location.pathname) {
-        case "/":
+      switch (true) {
+        case location.pathname === "/":
           setSelected("BERANDA");
           break;
-        case "/about":
+        case location.pathname === "/about":
           setSelected("TENTANG KAMI");
           break;
-        case "/developer":
+        case location.pathname.startsWith("/developer"):
           setSelected("DEVELOPER");
           break;
-        case "/simulasi-kpr":
+        case location.pathname === "/simulasi-kpr":
           setSelected("SIMULASI KPR");
           break;
-        case "/kontak-kami":
+        case location.pathname === "/kontak-kami":
           setSelected("KONTAK KAMI");
           break;
         default:

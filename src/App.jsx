@@ -7,10 +7,8 @@ import Developer from "./Pages/Developer";
 import Simulasi from "./Pages/Simulasi";
 import Kontak from "./Pages/Kontak";
 import NotFound from "./Pages/NotFound";
-import BumiCiampeaAsih from "./Pages/Cluster/BumiCiampeaAsih";
+import Cluster from "./Pages/Cluster/Cluster";
 import ScrollToTop from "./Components/ScrollToTop";
-import AdminLogin from "./Pages/Admin/Login";
-import AdminHome from "./Pages/Admin/AdminHome";
 
 function App() {
   return (
@@ -20,14 +18,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/developer" element={<Developer />} />
-        <Route
-          path="/developer/bumi-ciampea-asih"
-          element={<BumiCiampeaAsih />}
-        />
+        <Route path="/developer/cluster" element={<Cluster />} />
         <Route path="/simulasi-kpr" element={<Simulasi />} />
         <Route path="/kontak-kami" element={<Kontak />} />
-        <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminHome />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Router>
