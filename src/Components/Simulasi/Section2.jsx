@@ -54,7 +54,7 @@ function Section2({ data }) {
                 key={item.id}
                 src={item.logo}
                 alt={`Bank-${item.id}`}
-                className="h-auto w-auto mb-7 object-contain"
+                className="h-auto w-auto mb-7 max-h-30 object-contain"
               />
             ))}
           </div>

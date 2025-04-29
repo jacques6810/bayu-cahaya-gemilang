@@ -10,6 +10,7 @@ import aboutPointRoutes from "./routes/aboutPointRoutes.js";
 import developerRoutes from "./routes/developerRoutes.js";
 import simulasiRoutes from "./routes/simulasiRoutes.js";
 import simulasiBankRoutes from "./routes/simulasiBankRoutes.js";
+import simulasiAccordionRoutes from "./routes/simulasiAccordionRoutes.js";
 import kontakRoutes from "./routes/kontakRoutes.js";
 
 dotenv.config();
@@ -45,6 +46,7 @@ app.use("/api/about-point", aboutPointRoutes);
 app.use("/api/developer", developerRoutes);
 app.use("/api/simulasi", simulasiRoutes);
 app.use("/api/simulasi-bank", simulasiBankRoutes);
+app.use("/api/simulasi-accordion", simulasiAccordionRoutes);
 app.use("/api/kontak", kontakRoutes);
 
 // Jalankan server
