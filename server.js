@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import homeRoutes from "./routes/homeRoutes.js";
 import clusterRoutes from "./routes/clusterRoutes.js";
+import aboutRoutes from "./routes/aboutRoutes.js";
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ db.connect((err) => {
 // Routes
 app.use("/api/home", homeRoutes);
 app.use("/api/cluster", clusterRoutes);
+app.use("/api/about", aboutRoutes);
 
 // Jalankan server
 app.listen(5000, () => {

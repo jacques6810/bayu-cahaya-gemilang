@@ -4,13 +4,12 @@ import BackgroundImage from "../../assets/Background Home.png";
 import IconCompany from "../../assets/Icon Company.png";
 import IconLegality from "../../assets/Icon Legality.png";
 import IconCommitment from "../../assets/Icon Commitment.png";
-import LogoBCG from "../../assets/Logo BCG.png";
 import "../../App.css";
 
-function Section1() {
+function Section1({ data }) {
   return (
     <div className="flex flex-col items-center justify-center my-20 mx-10">
-      <Section title="SIAPA KAMI" />
+      <Section title={data.title} />
 
       {/* Profil Perusahaan */}
       <div className="flex flex-col md:flex-row-reverse items-center md:items-center text-justify max-w-6xl w-full gap-10 mt-10 mb-16">
