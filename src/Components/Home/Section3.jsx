@@ -4,11 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ArthaSoreangLiving from "../../assets/Background Home.png";
 import BukitCiampeaAsih from "../../assets/BukitCiampeaAsih_DeveloperBG.jpg";
-import Logo from "../../assets/Logo BCG.png";
 import Section from "../../Components/Section";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Section3 = () => {
+const Section3 = ({ data }) => {
   const sliderRef = React.useRef(null);
 
   const settings = {
@@ -34,7 +33,7 @@ const Section3 = () => {
         id="section-3"
         className="flex flex-col items-center w-full bg-white p-6 md:p-10"
       >
-        <Section title="DEVELOPER" />
+        <Section title={data.title} />
 
         <div className="relative w-full max-w-5xl" data-aos="fade-up">
           {/* Tombol Panah Kiri */}
