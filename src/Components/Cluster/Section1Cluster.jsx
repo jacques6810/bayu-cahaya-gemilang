@@ -5,70 +5,140 @@ import Gallery_1 from "../../assets/Gallery BCA_1.jpg";
 import Gallery_2 from "../../assets/Gallery BCA_2.jpg";
 import Gallery_3 from "../../assets/Gallery BCA_3.jpg";
 import Gallery_4 from "../../assets/Gallery BCA_4.jpg";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 function Section1Cluster() {
-  const [activeTab, setActiveTab] = useState("Deskripsi");
-
   const [mainImage, setMainImage] = useState(BCA_Background);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const galleryImages = [Gallery_1, Gallery_2, Gallery_3, Gallery_4];
+  const galleryImages = [
+    Gallery_1,
+    Gallery_2,
+    Gallery_3,
+    Gallery_4,
+    Gallery_1,
+    Gallery_2,
+    Gallery_3,
+    Gallery_4,
+  ];
 
   const handlePrevClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? galleryImages.length - 3 : prevIndex - 1
-    );
+    const newIndex =
+      currentIndex === 0 ? galleryImages.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    setMainImage(galleryImages[newIndex]);
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === galleryImages.length - 3 ? 0 : prevIndex + 1
-    );
+    const newIndex =
+      currentIndex === galleryImages.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    setMainImage(galleryImages[newIndex]);
   };
 
-  const displayedImages = galleryImages.slice(currentIndex, currentIndex + 3);
-  return (
-    <div>
-      <Section title="Informasi Cluster" />
+  const handleThumbnailClick = (index) => {
+    setMainImage(galleryImages[index]);
+    setCurrentIndex(index);
+  };
 
-      {/* Gambar utama */}
-      <div className="flex justify-center max-h-[500px] max-w-6xl mt-10 mx-auto object-cover">
-        <img
-          src={mainImage}
-          alt="Cluster"
-          className="w-3/4 rounded-xl shadow-lg"
-          data-aos="fade-up"
-        />
+  // Determine how many thumbnails to show based on screen size
+  const displayedThumbnails = window.innerWidth < 768 ? 3 : 4;
+  const startIndex = Math.min(
+    Math.max(0, currentIndex - Math.floor(displayedThumbnails / 2)),
+    Math.max(0, galleryImages.length - displayedThumbnails)
+  );
+  const visibleThumbnails = galleryImages.slice(
+    startIndex,
+    startIndex + displayedThumbnails
+  );
+
+  return (
+    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <Section
+        title="Cluster Gallery"
+        subtitle="Explore our premium residential clusters"
+      />
+
+      {/* Main Image with Modern Frame */}
+      <div className="max-w-6xl mx-auto md:mt-1 mb-8 px-2 sm:px-0">
+        <div className="relative overflow-hidden rounded-xl shadow-xl border-8 border-white bg-white">
+          <img
+            src={mainImage}
+            alt="Cluster"
+            className="w-full h-auto object-cover transition-opacity duration-300"
+            style={{ minHeight: "300px", maxHeight: "500px" }}
+            data-aos="fade-up"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 md:p-6">
+            <h3 className="text-white text-lg md:text-xl font-semibold">
+              Cluster {galleryImages.indexOf(mainImage) + 1}
+            </h3>
+            <p className="text-white/80 text-xs md:text-sm mt-1">
+              {galleryImages.length} premium residential options available
+            </p>
+          </div>
+        </div>
       </div>
 
-      {/* Gallery */}
-      <div
-        className="flex justify-center items-center gap-4 mt-6"
-        data-aos="fade-up"
-      >
-        <button
-          onClick={handlePrevClick}
-          className="text-gray-500 hover:text-gray-700"
-        >
-          &lt;
-        </button>
-        <div className="flex gap-4">
-          {displayedImages.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Gallery ${index + 1}`}
-              className="w-20 h-15 md:w-36 md:h-24 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
-              onClick={() => setMainImage(image)}
-            />
-          ))}
+      {/* Gallery Navigation */}
+      <div className="max-w-6xl mx-auto px-2 sm:px-0" data-aos="fade-up">
+        <div className="flex items-center justify-between mb-4">
+          <h4 className="text-gray-700 font-medium">Browse Gallery</h4>
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-gray-500">
+              {currentIndex + 1} / {galleryImages.length}
+            </span>
+          </div>
         </div>
-        <button
-          onClick={handleNextClick}
-          className="text-gray-500 hover:text-gray-700"
-        >
-          &gt;
-        </button>
+
+        <div className="relative">
+          {/* Thumbnail Gallery */}
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+            {visibleThumbnails.map((image, index) => {
+              const originalIndex = startIndex + index;
+              return (
+                <div
+                  key={originalIndex}
+                  className={`relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 border-2 ${
+                    originalIndex === currentIndex
+                      ? "border-teal-500 scale-105"
+                      : "border-transparent"
+                  }`}
+                  onClick={() => handleThumbnailClick(originalIndex)}
+                >
+                  <img
+                    src={image}
+                    alt={`Gallery ${originalIndex + 1}`}
+                    className="w-full h-24 sm:h-32 md:h-40 object-cover hover:opacity-90"
+                  />
+                  <div
+                    className={`absolute inset-0 ${
+                      originalIndex === currentIndex
+                        ? "bg-black/20"
+                        : "bg-black/0"
+                    } transition-all duration-300`}
+                  ></div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={handlePrevClick}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+            aria-label="Previous image"
+          >
+            <FiChevronLeft className="w-5 h-5 text-gray-700" />
+          </button>
+          <button
+            onClick={handleNextClick}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+            aria-label="Next image"
+          >
+            <FiChevronRight className="w-5 h-5 text-gray-700" />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -65,7 +65,7 @@ function Section1({ data }) {
 
       {/* Kontak Info */}
       <p
-        className="text-thin text-sm text-center px-5 lg:px-40 xl:px-80"
+        className="text-thin text-sm md:text-base text-center px-5 lg:px-10 xl:px-80 2xl:px-100"
         data-aos="fade-up"
       >
         {data.paragraph.split(/%%(.*?)%%/).map((part, index) =>

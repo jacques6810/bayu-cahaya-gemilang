@@ -23,9 +23,24 @@ function Section2Cluster() {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const specifications = [
+    { text: "Batu kali Beton bertulang (Pondasi)", icon: IconPondasi },
+    { text: "Rangka Atap Baja Ringan (Struktur)", icon: IconAtap },
+    { text: "Air bersih dari PDAM", icon: IconAir },
+    { text: "Listrik 1300 Watt", icon: IconListrik },
+    { text: "Sanitasi dari Septic Tank", icon: IconSanitasi },
+    { text: "Toilet dalam rumah", icon: IconToilet },
+    { text: "Dinding bata merah", icon: IconDinding },
+    { text: "Lantai keramik 60x60 cm", icon: IconLantaiUtama },
+    { text: "Pintu utama kayu solid", icon: IconPintuUtama },
+    { text: "Pintu kamar kayu solid", icon: IconPintuKamar },
+    { text: "Jendela aluminium", icon: IconJendela },
+    { text: "Plafond Gypsum", icon: IconPlafind },
+  ];
+
   return (
-    <div className="w-full">
-      {/* Tab Navigasi */}
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
+      {/* Tab Navigation - Improved */}
       <div className="flex justify-center my-10" data-aos="fade-up">
         <div className="inline-flex border-b border-gray-300">
           {["Deskripsi", "Spesifikasi"].map((tab) => (
@@ -44,86 +59,78 @@ function Section2Cluster() {
         </div>
       </div>
 
-      {/* Konten Tab */}
-      <div
-        className="w-3/4 mx-auto mt-5 text-justify text-gray-700"
-        data-aos="fade-up"
-      >
+      {/* Tab Content */}
+      <div className="max-w-6xl mx-auto">
         {activeTab === "Deskripsi" ? (
-          <div className="max-w-4xl mx-auto" data-aos="fade-up">
-            <p>
-              Bukit Ciampea Asri Bogor menghadirkan hunian eksklusif dengan
-              lingkungan yang aman, nyaman, dan asri. Mengusung konsep rumah
-              taman, perumahan ini dilengkapi dengan berbagai fasilitas modern
-              yang mendukung gaya hidup urban, menjadikannya pilihan ideal bagi
-              mereka yang menginginkan keseimbangan antara kenyamanan dan
-              aksesibilitas.
-            </p>
-            <p className="mt-5">
-              Keunggulan Bukit Ciampea Asri tidak hanya terletak pada desain
-              rumah yang modern dan harga yang terjangkau, tetapi juga pada
-              lokasinya yang strategis. Dengan akses transportasi yang mudah
-              serta kedekatan dengan berbagai fasilitas umum, penghuni dapat
-              menikmati kemudahan dalam memenuhi kebutuhan sehari-hari.
-            </p>
+          <div className="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+              Tentang Cluster Bukit Ciampea Asri
+            </h3>
+            <div className="justify-text text-justify space-y-4 text-base md:text-lg text-gray-600">
+              <p>
+                Bukit Ciampea Asri Bogor menghadirkan hunian eksklusif dengan
+                lingkungan yang aman, nyaman, dan asri. Mengusung konsep rumah
+                taman, perumahan ini dilengkapi dengan berbagai fasilitas modern
+                yang mendukung gaya hidup urban.Keunggulan Bukit Ciampea Asri
+                tidak hanya terletak pada desain rumah yang modern dan harga
+                yang terjangkau, tetapi juga pada lokasinya yang strategis
+                dengan akses transportasi yang mudah. Perumahan ini dirancang
+                untuk memberikan kenyamanan maksimal bagi penghuninya, dengan
+                tata ruang yang efisien dan estetika yang menawan.
+              </p>
+              <p>
+                Selain itu, Bukit Ciampea Asri menawarkan fasilitas umum seperti
+                taman bermain, area olahraga, dan jalur jogging yang dirancang
+                untuk mendukung gaya hidup sehat. Lingkungan yang hijau dan asri
+                memberikan suasana yang tenang dan damai, menjadikannya tempat
+                yang ideal untuk keluarga. Dengan lokasi yang dekat dengan pusat
+                perbelanjaan, sekolah, dan fasilitas kesehatan, penghuni dapat
+                dengan mudah memenuhi kebutuhan sehari-hari tanpa harus
+                bepergian jauh. Bukit Ciampea Asri juga memiliki akses yang
+                mudah ke jalan utama, sehingga memudahkan mobilitas ke berbagai
+                tujuan.
+              </p>
+            </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-5 max-w-4xl mx-auto">
-            <div className="lg:col-span-2 lg:mr-40 mx-auto">
-              {[
-                {
-                  text: "Batu kali Beton bertulang (Pondasi)",
-                  icon: IconPondasi,
-                },
-                {
-                  text: "Rangka Atap Baja Ringan (Struktur)",
-                  icon: IconAtap,
-                },
-                {
-                  text: "Bata press, roster kotak (Dinding)",
-                  icon: IconDinding,
-                },
-                {
-                  text: "Granit Tile - 60 x 60 (Lantai Utama)",
-                  icon: IconLantaiUtama,
-                },
-                {
-                  text: "Engineering wood fin, melamic (Pintu Utama)",
-                  icon: IconPintuUtama,
-                },
-                { text: "Wood Panel (Pintu Kamar)", icon: IconPintuKamar },
-                {
-                  text: "Aluminium powder coating (Jendela)",
-                  icon: IconJendela,
-                },
-                {
-                  text: "Gypsum, Rangka Hollow (Plafond)",
-                  icon: IconPlafind,
-                },
-                {
-                  text: "Genteng beton rangka baja ringan (Atap)",
-                  icon: IconAtap,
-                },
-                { text: "PDAM (Air)", icon: IconAir },
-                { text: "1300VA (Listrik)", icon: IconListrik },
-                { text: "American Standard (Sanitasi)", icon: IconSanitasi },
-                {
-                  text: "Closet Duduk Toto Standart (Toilet)",
-                  icon: IconToilet,
-                },
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-4 mt-3">
-                  <img src={item.icon} alt="icon" className="w-8 h-8" />
-                  <span className="text-sm md:text-base">{item.text}</span>
-                </div>
-              ))}
+          <div className="flex flex-col lg:flex-row gap-8" data-aos="fade-up">
+            {/* Specifications List */}
+            <div className="flex-1 bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+                Detail Spesifikasi
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {specifications.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg transition-colors"
+                  >
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="w-10 h-10 object-contain flex-shrink-0"
+                    />
+                    <span className="text-gray-700">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col items-center">
-              <img
-                src={FloorplanBCA}
-                alt="Floorplan"
-                className="w-full max-w-sm rounded-lg shadow-lg"
-              />
+
+            {/* Floorplan */}
+            <div className="lg:w-1/3">
+              <div className="sticky top-8 bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                  Denah Rumah
+                </h3>
+                <img
+                  src={FloorplanBCA}
+                  alt="Floorplan"
+                  className="w-full rounded-lg border border-gray-200"
+                />
+                <button className="mt-4 w-full py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors">
+                  Download Denah
+                </button>
+              </div>
             </div>
           </div>
         )}
