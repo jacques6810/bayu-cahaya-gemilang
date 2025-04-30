@@ -51,6 +51,19 @@ function Section2Cluster({ cluster_id }) {
     fetchClusterDetails();
   }, [cluster_id]);
 
+  const handleDownload = async () => {
+    const response = await fetch(imageFloorplan);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `Konten_${title?.replace(/\s+/g, "_") || "Rumah"}.jpg`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
   return (
     <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
       {/* Tab Navigation */}
@@ -125,13 +138,12 @@ function Section2Cluster({ cluster_id }) {
                   alt="Floorplan"
                   className="w-full rounded-lg border border-gray-200"
                 />
-                <a
-                  href={imageFloorplan}
-                  download="Denah_Rumah.jpg"
+                <button
+                  onClick={handleDownload}
                   className="mt-4 w-full inline-block text-center font-semibold tracking-wider py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors"
                 >
-                  UNDUH KONTEN
-                </a>
+                  DOWNLOAD KONTEN
+                </button>
               </div>
             </div>
           </div>
