@@ -55,7 +55,7 @@ function Cluster() {
       {/* Section */}
       <div className="flex flex-col items-center justify-center py-20">
         <Section1 cluster_id={clusterData.id} />
-        <Section2 />
+        <Section2 cluster_id={clusterData.id} />
       </div>
 
       <Footer />

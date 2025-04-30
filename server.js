@@ -3,7 +3,6 @@ import mysql from "mysql2";
 import cors from "cors";
 import dotenv from "dotenv";
 import homeRoutes from "./routes/homeRoutes.js";
-import clusterRoutes from "./routes/clusterRoutes.js";
 import aboutRoutes from "./routes/aboutRoutes.js";
 import aboutInfoRoutes from "./routes/aboutInfoRoutes.js";
 import aboutPointRoutes from "./routes/aboutPointRoutes.js";
@@ -11,7 +10,9 @@ import developerRoutes from "./routes/developerRoutes.js";
 import simulasiRoutes from "./routes/simulasiRoutes.js";
 import simulasiBankRoutes from "./routes/simulasiBankRoutes.js";
 import simulasiAccordionRoutes from "./routes/simulasiAccordionRoutes.js";
+import clusterRoutes from "./routes/clusterRoutes.js";
 import clusterGalleryRoutes from "./routes/clusterGalleryRoutes.js";
+import clusterSpesifikasiRoutes from "./routes/clusterSpesifikasiRoutes.js";
 import kontakRoutes from "./routes/kontakRoutes.js";
 
 dotenv.config();
@@ -49,6 +50,7 @@ app.use("/api/simulasi-bank", simulasiBankRoutes);
 app.use("/api/simulasi-accordion", simulasiAccordionRoutes);
 app.use("/api/cluster", clusterRoutes);
 app.use("/api/cluster-gallery", clusterGalleryRoutes);
+app.use("/api/cluster-spesifikasi", clusterSpesifikasiRoutes);
 app.use("/api/kontak", kontakRoutes);
 
 // Jalankan server

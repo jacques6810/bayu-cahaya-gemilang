@@ -16,31 +16,35 @@ import IconJendela from "../../assets/IconSpesifikasi/Icon Jendela BCA.png";
 import IconPlafind from "../../assets/IconSpesifikasi/Icon Plafind BCA.png";
 import "../../App.css";
 
-function Section2Cluster() {
+function Section2Cluster({ cluster_id }) {
   const [activeTab, setActiveTab] = useState("Deskripsi");
+  const [specifications, setSpecifications] = useState([]); // State untuk menyimpan data spesifikasi dari API
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-  }, []);
 
-  const specifications = [
-    { text: "Batu kali Beton bertulang (Pondasi)", icon: IconPondasi },
-    { text: "Rangka Atap Baja Ringan (Struktur)", icon: IconAtap },
-    { text: "Air bersih dari PDAM", icon: IconAir },
-    { text: "Listrik 1300 Watt", icon: IconListrik },
-    { text: "Sanitasi dari Septic Tank", icon: IconSanitasi },
-    { text: "Toilet dalam rumah", icon: IconToilet },
-    { text: "Dinding bata merah", icon: IconDinding },
-    { text: "Lantai keramik 60x60 cm", icon: IconLantaiUtama },
-    { text: "Pintu utama kayu solid", icon: IconPintuUtama },
-    { text: "Pintu kamar kayu solid", icon: IconPintuKamar },
-    { text: "Jendela aluminium", icon: IconJendela },
-    { text: "Plafond Gypsum", icon: IconPlafind },
-  ];
+    const fetchSpesifikasi = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/cluster-spesifikasi/cluster/${cluster_id}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch specifications");
+        }
+        const data = await response.json();
+        console.log("Fetched specifications:", data);
+        setSpecifications(data); // Simpan data spesifikasi ke state
+      } catch (error) {
+        console.error("Error fetching specifications:", error);
+      }
+    };
+
+    fetchSpesifikasi();
+  }, [cluster_id]);
 
   return (
     <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
-      {/* Tab Navigation - Improved */}
+      {/* Tab Navigation */}
       <div className="flex justify-center my-10" data-aos="fade-up">
         <div className="inline-flex border-b border-gray-300">
           {["Deskripsi", "Spesifikasi"].map((tab) => (
@@ -71,7 +75,7 @@ function Section2Cluster() {
                 Bukit Ciampea Asri Bogor menghadirkan hunian eksklusif dengan
                 lingkungan yang aman, nyaman, dan asri. Mengusung konsep rumah
                 taman, perumahan ini dilengkapi dengan berbagai fasilitas modern
-                yang mendukung gaya hidup urban.Keunggulan Bukit Ciampea Asri
+                yang mendukung gaya hidup urban. Keunggulan Bukit Ciampea Asri
                 tidak hanya terletak pada desain rumah yang modern dan harga
                 yang terjangkau, tetapi juga pada lokasinya yang strategis
                 dengan akses transportasi yang mudah. Perumahan ini dirancang
@@ -100,17 +104,17 @@ function Section2Cluster() {
                 Detail Spesifikasi
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {specifications.map((item, index) => (
+                {specifications.map((item) => (
                   <div
-                    key={index}
+                    key={item.id}
                     className="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg transition-colors"
                   >
                     <img
                       src={item.icon}
-                      alt=""
+                      alt={item.title}
                       className="w-10 h-10 object-contain flex-shrink-0"
                     />
-                    <span className="text-gray-700">{item.text}</span>
+                    <span className="text-gray-700">{item.title}</span>
                   </div>
                 ))}
               </div>
