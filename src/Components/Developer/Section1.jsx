@@ -50,6 +50,7 @@ function Section1({ data }) {
             clusters.map((cluster) => (
               <ClusterComponent
                 key={cluster.id}
+                cluster_id={cluster.id}
                 image={cluster.image}
                 title={cluster.title}
               />

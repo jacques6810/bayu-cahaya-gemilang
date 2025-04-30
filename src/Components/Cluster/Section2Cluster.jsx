@@ -127,9 +127,13 @@ function Section2Cluster() {
                   alt="Floorplan"
                   className="w-full rounded-lg border border-gray-200"
                 />
-                <button className="mt-4 w-full py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors">
-                  Download Denah
-                </button>
+                <a
+                  href={FloorplanBCA}
+                  download="Denah_Rumah_Bukit_Ciampea_Asri.jpg"
+                  className="mt-4 w-full inline-block text-center font-semibold tracking-wider py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors"
+                >
+                  UNDUH KONTEN
+                </a>
               </div>
             </div>
           </div>

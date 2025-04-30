@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function ClusterComponent({ key, image, title }) {
+function ClusterComponent({ cluster_id, image, title }) {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    // console.log(cluster_id);
+    navigate(`/developer/cluster/${cluster_id}`);
+  };
+
   return (
     <div
       className="relative w-full h-90 lg:h-120 shadow-2xl overflow-hidden group"
@@ -16,8 +24,11 @@ function ClusterComponent({ key, image, title }) {
         <h1 className="font-semibold text-white text-xl text-center shadow-2xl">
           {title}
         </h1>
-        <button className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">
-          <a href="/developer/cluster">Info Selengkapnya</a>
+        <button
+          onClick={handleNavigate}
+          className="text-sm font-regular text-white shadow-2xl bg-teal-500 px-7 py-2 mt-3 rounded-4xl hover:bg-teal-600 transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95"
+        >
+          Info Selengkapnya
         </button>
       </div>
     </div>

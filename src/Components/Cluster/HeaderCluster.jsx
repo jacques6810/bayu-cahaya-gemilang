@@ -1,14 +1,13 @@
 import React from "react";
-import BCA_Background from "../../assets/BCA Background.jpg";
-import BCA_Logo from "../../assets/BCA Logo.svg";
 import "../../App.css";
 
-function HeaderCluster() {
+function HeaderCluster({ data }) {
+  console.log(data.data);
   return (
     <div className="relative flex flex-col items-center justify-center mt-20">
       {/* Background */}
       <img
-        src={BCA_Background}
+        src={data.background_header}
         alt="Background"
         className="w-full h-110 object-cover"
       />
@@ -20,7 +19,7 @@ function HeaderCluster() {
         data-aos="fade-up"
       >
         <img
-          src={BCA_Logo}
+          src={data.logo_header}
           alt="Cluster Logo"
           className="w-32 h-32 bg-white rounded-full p-3 shadow-lg"
         />
