@@ -1,28 +1,19 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import FloorplanBCA from "../../assets/Floorplan BCA.jpg";
-import IconPondasi from "../../assets/IconSpesifikasi/Icon Pondasi BCA.png";
-import IconAtap from "../../assets/IconSpesifikasi/Icon Atap BCA.png";
-import IconAir from "../../assets/IconSpesifikasi/Icon Air BCA.png";
-import IconListrik from "../../assets/IconSpesifikasi/Icon Listrik BCA.png";
-import IconSanitasi from "../../assets/IconSpesifikasi/Icon Sanitasi BCA.png";
-import IconToilet from "../../assets/IconSpesifikasi/Icon Toilet BCA.png";
-import IconDinding from "../../assets/IconSpesifikasi/Icon Dinding BCA.png";
-import IconLantaiUtama from "../../assets/IconSpesifikasi/Icon LantaiUtama BCA.png";
-import IconPintuUtama from "../../assets/IconSpesifikasi/Icon PintuUtama BCA.png";
-import IconPintuKamar from "../../assets/IconSpesifikasi/Icon PintuKamar BCA.png";
-import IconJendela from "../../assets/IconSpesifikasi/Icon Jendela BCA.png";
-import IconPlafind from "../../assets/IconSpesifikasi/Icon Plafind BCA.png";
 import "../../App.css";
 
 function Section2Cluster({ cluster_id }) {
   const [activeTab, setActiveTab] = useState("Deskripsi");
-  const [specifications, setSpecifications] = useState([]); // State untuk menyimpan data spesifikasi dari API
+  const [specifications, setSpecifications] = useState([]);
+  const [title, setTitle] = useState(""); // State untuk title
+  const [description, setDescription] = useState(""); // State untuk deskripsi
+  const [imageFloorplan, setImageFloorplan] = useState(""); // State untuk image_floorplan
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
 
+    // Fetch data spesifikasi
     const fetchSpesifikasi = async () => {
       try {
         const response = await fetch(
@@ -32,14 +23,32 @@ function Section2Cluster({ cluster_id }) {
           throw new Error("Failed to fetch specifications");
         }
         const data = await response.json();
-        console.log("Fetched specifications:", data);
-        setSpecifications(data); // Simpan data spesifikasi ke state
+        setSpecifications(data);
       } catch (error) {
         console.error("Error fetching specifications:", error);
       }
     };
 
+    // Fetch data cluster (title, deskripsi, image_floorplan)
+    const fetchClusterDetails = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/cluster/${cluster_id}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch cluster details");
+        }
+        const data = await response.json();
+        setTitle(data.title);
+        setDescription(data.deskripsi);
+        setImageFloorplan(data.image_floorplan);
+      } catch (error) {
+        console.error("Error fetching cluster details:", error);
+      }
+    };
+
     fetchSpesifikasi();
+    fetchClusterDetails();
   }, [cluster_id]);
 
   return (
@@ -68,32 +77,17 @@ function Section2Cluster({ cluster_id }) {
         {activeTab === "Deskripsi" ? (
           <div className="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-              Tentang Cluster Bukit Ciampea Asri
+              Tentang {title}
             </h3>
             <div className="justify-text text-justify space-y-4 text-base md:text-lg text-gray-600">
-              <p>
-                Bukit Ciampea Asri Bogor menghadirkan hunian eksklusif dengan
-                lingkungan yang aman, nyaman, dan asri. Mengusung konsep rumah
-                taman, perumahan ini dilengkapi dengan berbagai fasilitas modern
-                yang mendukung gaya hidup urban. Keunggulan Bukit Ciampea Asri
-                tidak hanya terletak pada desain rumah yang modern dan harga
-                yang terjangkau, tetapi juga pada lokasinya yang strategis
-                dengan akses transportasi yang mudah. Perumahan ini dirancang
-                untuk memberikan kenyamanan maksimal bagi penghuninya, dengan
-                tata ruang yang efisien dan estetika yang menawan.
-              </p>
-              <p>
-                Selain itu, Bukit Ciampea Asri menawarkan fasilitas umum seperti
-                taman bermain, area olahraga, dan jalur jogging yang dirancang
-                untuk mendukung gaya hidup sehat. Lingkungan yang hijau dan asri
-                memberikan suasana yang tenang dan damai, menjadikannya tempat
-                yang ideal untuk keluarga. Dengan lokasi yang dekat dengan pusat
-                perbelanjaan, sekolah, dan fasilitas kesehatan, penghuni dapat
-                dengan mudah memenuhi kebutuhan sehari-hari tanpa harus
-                bepergian jauh. Bukit Ciampea Asri juga memiliki akses yang
-                mudah ke jalan utama, sehingga memudahkan mobilitas ke berbagai
-                tujuan.
-              </p>
+              {description ? (
+                description
+                  .replace(/\\n/g, "\n") // ganti literal \n ke real newline
+                  .split("\n")
+                  .map((line, index) => <p key={index}>{line}</p>)
+              ) : (
+                <p>Deskripsi tidak tersedia.</p>
+              )}
             </div>
           </div>
         ) : (
@@ -127,13 +121,13 @@ function Section2Cluster({ cluster_id }) {
                   Denah Rumah
                 </h3>
                 <img
-                  src={FloorplanBCA}
+                  src={imageFloorplan}
                   alt="Floorplan"
                   className="w-full rounded-lg border border-gray-200"
                 />
                 <a
-                  href={FloorplanBCA}
-                  download="Denah_Rumah_Bukit_Ciampea_Asri.jpg"
+                  href={imageFloorplan}
+                  download="Denah_Rumah.jpg"
                   className="mt-4 w-full inline-block text-center font-semibold tracking-wider py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors"
                 >
                   UNDUH KONTEN
