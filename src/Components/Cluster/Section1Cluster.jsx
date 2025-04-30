@@ -1,26 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Section from "../../Components/Section";
 import BCA_Background from "../../assets/BCA Background.jpg";
-import Gallery_1 from "../../assets/Gallery BCA_1.jpg";
-import Gallery_2 from "../../assets/Gallery BCA_2.jpg";
-import Gallery_3 from "../../assets/Gallery BCA_3.jpg";
-import Gallery_4 from "../../assets/Gallery BCA_4.jpg";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-function Section1Cluster() {
+function Section1Cluster({ cluster_id }) {
   const [mainImage, setMainImage] = useState(BCA_Background);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [galleryImages, setGalleryImages] = useState([]); // State untuk menyimpan gambar dari API
 
-  const galleryImages = [
-    Gallery_1,
-    Gallery_2,
-    Gallery_3,
-    Gallery_4,
-    Gallery_1,
-    Gallery_2,
-    Gallery_3,
-    Gallery_4,
-  ];
+  useEffect(() => {
+    const fetchGalleryImages = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/cluster-gallery/cluster/${cluster_id}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch gallery images");
+        }
+        const data = await response.json();
+        const images = data.map((image) => image.image_cluster);
+        console.log("Fetched images:", images);
+
+        if (images.length > 0) {
+          setGalleryImages(images);
+          setMainImage(images[0]);
+          setCurrentIndex(0);
+        } else {
+          setMainImage(BCA_Background);
+        }
+      } catch (error) {
+        console.error("Error fetching gallery images:", error);
+        setMainImage(BCA_Background);
+      }
+    };
+
+    fetchGalleryImages();
+  }, [cluster_id]);
 
   const handlePrevClick = () => {
     const newIndex =
@@ -54,10 +69,7 @@ function Section1Cluster() {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
-      <Section
-        title="Cluster Gallery"
-        subtitle="Explore our premium residential clusters"
-      />
+      <Section title="Cluster Gallery" />
 
       {/* Main Image with Modern Frame */}
       <div className="max-w-6xl mx-auto md:mt-1 mb-8 px-2 sm:px-0">
@@ -71,10 +83,10 @@ function Section1Cluster() {
           />
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 md:p-6">
             <h3 className="text-white text-lg md:text-xl font-semibold">
-              Cluster {galleryImages.indexOf(mainImage) + 1}
+              Gallery {currentIndex + 1}
             </h3>
             <p className="text-white/80 text-xs md:text-sm mt-1">
-              {galleryImages.length} premium residential options available
+              {galleryImages.length} gallery images available
             </p>
           </div>
         </div>

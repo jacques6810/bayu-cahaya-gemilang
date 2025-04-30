@@ -11,6 +11,7 @@ import developerRoutes from "./routes/developerRoutes.js";
 import simulasiRoutes from "./routes/simulasiRoutes.js";
 import simulasiBankRoutes from "./routes/simulasiBankRoutes.js";
 import simulasiAccordionRoutes from "./routes/simulasiAccordionRoutes.js";
+import clusterGalleryRoutes from "./routes/clusterGalleryRoutes.js";
 import kontakRoutes from "./routes/kontakRoutes.js";
 
 dotenv.config();
@@ -39,7 +40,6 @@ db.connect((err) => {
 
 // Routes
 app.use("/api/home", homeRoutes);
-app.use("/api/cluster", clusterRoutes);
 app.use("/api/about", aboutRoutes);
 app.use("/api/about-info", aboutInfoRoutes);
 app.use("/api/about-point", aboutPointRoutes);
@@ -47,6 +47,8 @@ app.use("/api/developer", developerRoutes);
 app.use("/api/simulasi", simulasiRoutes);
 app.use("/api/simulasi-bank", simulasiBankRoutes);
 app.use("/api/simulasi-accordion", simulasiAccordionRoutes);
+app.use("/api/cluster", clusterRoutes);
+app.use("/api/cluster-gallery", clusterGalleryRoutes);
 app.use("/api/kontak", kontakRoutes);
 
 // Jalankan server

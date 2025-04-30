@@ -2,7 +2,7 @@ import React from "react";
 import "../../App.css";
 
 function HeaderCluster({ data }) {
-  console.log(data.data);
+  // console.log(data.data);
   return (
     <div className="relative flex flex-col items-center justify-center mt-20">
       {/* Background */}
