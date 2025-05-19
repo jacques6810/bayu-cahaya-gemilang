@@ -23,6 +23,9 @@ function App() {
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Router>
+    // <div className="min-h-screen bg-blue-500 flex items-center justify-center text-white text-xl">
+    //   Tailwind Berhasil!
+    // </div>
   );
 }
 
