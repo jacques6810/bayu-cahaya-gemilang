@@ -73,7 +73,7 @@ const Section3 = ({ data }) => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-opacity-40">
-                    <div className="absolute w-full h-full bg-black opacity-50 z-0"></div>
+                    <div className="absolute w-full h-full bg-black opacity-35 z-0"></div>
                     <h3 className="mx-18 text-center text-white text-lg md:text-3xl font-bold z-10">
                       {slide.title}
                     </h3>

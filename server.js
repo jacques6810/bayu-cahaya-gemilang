@@ -14,6 +14,7 @@ import clusterRoutes from "./routes/clusterRoutes.js";
 import clusterGalleryRoutes from "./routes/clusterGalleryRoutes.js";
 import clusterSpesifikasiRoutes from "./routes/clusterSpesifikasiRoutes.js";
 import kontakRoutes from "./routes/kontakRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
 
@@ -52,6 +53,7 @@ app.use("/api/cluster", clusterRoutes);
 app.use("/api/cluster-gallery", clusterGalleryRoutes);
 app.use("/api/cluster-spesifikasi", clusterSpesifikasiRoutes);
 app.use("/api/kontak", kontakRoutes);
+app.use("/api/contact", contactRoutes);
 
 // Jalankan server
 app.listen(5000, () => {
