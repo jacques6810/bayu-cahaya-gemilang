@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "../Components/Navbar";
@@ -7,22 +7,54 @@ import Section2 from "../Components/Home/Section2";
 import Section3 from "../Components/Home/Section3";
 import Section4 from "../Components/Home/Section4";
 import Footer from "../Components/Footer";
+import Loading from "../Components/Modal/Loading";
+import Error from "../Components/Modal/Error";
 import "../App.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Home() {
+  const [sections, setSections] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
+
+    const fetchSections = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/home`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch sections");
+        }
+        const data = await response.json();
+        setSections(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSections();
   }, []);
 
-  // sm:border-2 sm:border-red-500 md:border-2 md:border-green-500 lg:border-2 lg:border-blue-500 xl:border-2 xl:border-yellow-500
+  if (loading) return <Loading />;
+
+  if (error)
+    return (
+      <div className="w-full h-screen flex items-center justify-center bg-gray-200">
+        <Error message={error} />
+      </div>
+    );
 
   return (
     <div className="relative w-full h-full">
       <Navbar />
-      <Section1 data-aos="fade-up" />
-      <Section2 data-aos="fade-up" />
-      <Section3 data-aos="fade-up" />
-      <Section4 data-aos="fade-up" />
+      <Section1 data={sections.find((s) => s.id === 1)} />
+      <Section2 data={sections.find((s) => s.id === 2)} />
+      <Section3 data={sections.find((s) => s.id === 3)} />
+      <Section4 data={sections.find((s) => s.id === 4)} />
       <Footer />
     </div>
   );

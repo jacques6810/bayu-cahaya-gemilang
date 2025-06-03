@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import LogoBCG from "../../assets/Logo BCG.png";
+import Section from "../Section";
 import "../../App.css";
 
-function Section1() {
+function Section1({ data }) {
   const [hargaProperti, setHargaProperti] = useState(400000000);
   const [sukuBunga, setSukuBunga] = useState(7.7);
   const [jangkaWaktu, setJangkaWaktu] = useState(15);
@@ -17,19 +17,8 @@ function Section1() {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center py-20">
-        <img
-          src={LogoBCG}
-          alt="Logo BCG"
-          className="h-15 w-30 mb-7"
-          data-aos="fade-up"
-        />
-        <h1
-          className="text-4xl font-semibold text-center mb-5"
-          data-aos="fade-up"
-        >
-          SIMULASI
-        </h1>
+      <div className="flex flex-col items-center justify-center py-10 mt-10 mx-10">
+        <Section title={data.title} />
       </div>
       {/* Form Simulasi */}
       <div className="max-w-4xl lg:max-w-6xl mx-auto px-10">

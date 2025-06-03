@@ -1,7 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Cek apakah content mengandung bullet list (\n- ...)
+  const renderContent = (text) => {
+    if (text.includes("\n-")) {
+      return (
+        <ul className="list-disc list-inside space-y-1">
+          {text
+            .split("\n")
+            .filter((line) => line.trim() !== "")
+            .map((line, idx) => (
+              <li key={idx}>{line.replace(/^- /, "")}</li>
+            ))}
+        </ul>
+      );
+    } else {
+      return <p>{text}</p>;
+    }
+  };
 
   return (
     <div
@@ -20,7 +40,7 @@ const AccordionItem = ({ title, content }) => {
       {/* Accordion Content */}
       {isOpen && (
         <div className="p-4 bg-white border-t border-gray-300 text-sm text-gray-600">
-          {content}
+          {renderContent(content)}
         </div>
       )}
     </div>
@@ -28,83 +48,35 @@ const AccordionItem = ({ title, content }) => {
 };
 
 const Accordion = () => {
+  const [accordions, setAccordions] = useState([]);
+
+  useEffect(() => {
+    const fetchAccordions = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/simulasi-accordion`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch accordions");
+        }
+        const data = await response.json();
+        const sortedData = data.sort((a, b) => a.id - b.id);
+        setAccordions(sortedData);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchAccordions();
+  }, []);
+
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <AccordionItem
-        title="Kredit Pemilikan Rumah (KPR)"
-        content="Kredit Pemilikan Rumah (KPR) adalah fasilitas pinjaman dari bank atau lembaga keuangan untuk membeli rumah. Pembayaran dilakukan dengan sistem cicilan dalam jangka waktu tertentu."
-      />
-      <AccordionItem
-        title="Cara Kerja KPR"
-        content={
-          <ul className="list-disc list-inside space-y-2">
-            <li>
-              <strong>Pengajuan KPR:</strong> Calon pembeli mengajukan
-              permohonan KPR dengan dokumen pendukung.
-            </li>
-            <li>
-              <strong>Penilaian Kredit:</strong> Bank menilai kemampuan
-              finansial pemohon.
-            </li>
-            <li>
-              <strong>Penaksiran Properti:</strong> Bank menentukan nilai rumah
-              yang akan dibeli.
-            </li>
-            <li>
-              <strong>Persetujuan dan Akad Kredit:</strong> Jika disetujui,
-              pemohon dan bank menandatangani perjanjian kredit.
-            </li>
-            <li>
-              <strong>Pencairan Dana & Cicilan:</strong> Bank mencairkan dana
-              kepada penjual, dan pemohon mulai membayar cicilan.
-            </li>
-          </ul>
-        }
-      />
-      <AccordionItem
-        title="Beberapa Jenis KPR"
-        content={
-          <ul className="list-disc list-inside space-y-2">
-            <li>
-              <strong>KPR Konvensional:</strong> Menggunakan sistem suku bunga
-              tetap atau mengambang.
-            </li>
-            <li>
-              <strong>KPR Syariah:</strong> Berdasarkan prinsip syariah seperti
-              murabahah (jual beli dengan margin).
-            </li>
-            <li>
-              <strong>KPR Subsidi:</strong> Diberikan kepada masyarakat
-              berpenghasilan rendah dengan bunga rendah.
-            </li>
-            <li>
-              <strong>KPR Rumah Ibu:</strong> Dikhususkan untuk ibu rumah tangga
-              dengan penghasilan rendah.
-            </li>
-          </ul>
-        }
-      />
-      <AccordionItem
-        title="Simulasi KPR"
-        content={
-          <div>
-            Simulasi KPR membantu menghitung cicilan berdasarkan harga rumah,
-            suku bunga, dan tenor pinjaman.
-            <br />
-            <br />
-            <strong>Rumus perhitungan cicilan:</strong>
-            <pre className="bg-gray-100 p-2 rounded-md mt-2">
-              Cicilan = (P × r × (1 + r)^n) / ((1 + r)^n - 1)
-            </pre>
-            <p className="mt-2">
-              <strong>P:</strong> Pinjaman pokok (harga rumah - uang muka){" "}
-              <br />
-              <strong>r:</strong> Suku bunga per bulan <br />
-              <strong>n:</strong> Jumlah bulan (tenor x 12)
-            </p>
-          </div>
-        }
-      />
+      {accordions.map((item) => (
+        <AccordionItem
+          key={item.id}
+          title={item.title}
+          content={item.paragraph}
+        />
+      ))}
     </div>
   );
 };

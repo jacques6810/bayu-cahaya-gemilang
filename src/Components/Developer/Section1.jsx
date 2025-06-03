@@ -1,34 +1,62 @@
-import React from "react";
-import LogoBCG from "../../assets/Logo BCG.png";
-import ASL from "../../assets/Background Home.png";
-import BCA from "../../assets/BukitCiampeaAsih_DeveloperBG.jpg";
+import React, { useState, useEffect } from "react";
+import Section from "../Section";
 import ClusterComponent from "./ClusterComponent";
 import "../../App.css";
 
-function Section1() {
+const API_URL = import.meta.env.VITE_API_URL;
+
+function Section1({ data }) {
+  const [clusters, setClusters] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchClusters = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/cluster`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch clusters");
+        }
+        const data = await response.json();
+
+        const mappedClusters = data.map((cluster) => ({
+          id: cluster.id,
+          title: cluster.title,
+          image: cluster.image_preview,
+        }));
+
+        setClusters(mappedClusters);
+      } catch (error) {
+        console.error("Error fetching clusters:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchClusters();
+  }, []);
+
   return (
     <div className="flex flex-col items-center py-20 px-10 lg:px-20 xl:px-60">
-      <img
-        src={LogoBCG}
-        alt="Logo BCG"
-        className="h-15 w-30 mb-7"
-        data-aos="fade-up"
-      />
-      <h1
-        className="text-4xl font-semibold text-center mb-5"
-        data-aos="fade-up"
-      >
-        CLUSTER
-      </h1>
+      <Section title={data.title} />
+
       <div className="grid gap-6 my-10 w-full object-cover grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-        {/* Artha Soreang Living */}
-        <ClusterComponent image={ASL} title="ARTHA SOREANG LIVING" />
-
-        {/* Bukit Ciampea Asri */}
-        <ClusterComponent image={BCA} title="BUKIT CIAMPEA ASRI" />
-
-        {/* Pasanggrahan Hill */}
-        <ClusterComponent image={ASL} title="PASANGGRAHAN HILL" />
+        {loading
+          ? // Skeleton loading
+            Array.from({ length: 3 }).map((_, idx) => (
+              <div
+                key={idx}
+                className="w-full h-64 bg-gray-300 rounded-lg animate-pulse"
+              ></div>
+            ))
+          : // Render dynamic cluster data
+            clusters.map((cluster) => (
+              <ClusterComponent
+                key={cluster.id}
+                cluster_id={cluster.id}
+                image={cluster.image}
+                title={cluster.title}
+              />
+            ))}
       </div>
     </div>
   );

@@ -1,46 +1,68 @@
-import React from "react";
-import LogoBCG from "../../assets/Logo BCG.png";
-import BankBRI from "../../assets/Bank BRI.png";
-import BankBJB from "../../assets/Bank BJB.png";
-import BankBTN from "../../assets/Bank BTN.png";
-import BankMandiri from "../../assets/Bank Mandiri.png";
-import BankBSI from "../../assets/Bank BSI.png";
+import React, { useState, useEffect } from "react";
+import Section from "../Section";
 import "../../App.css";
 
-function Section2() {
+const API_URL = import.meta.env.VITE_API_URL;
+
+function Section2({ data }) {
+  const [bank, setBank] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBank = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/simulasi-bank`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch bank data");
+        }
+        const data = await response.json();
+
+        // Mapping ambil hanya id dan logo
+        const mappedBank = data
+          .sort((a, b) => a.id - b.id)
+          .map((bank) => ({
+            id: bank.id,
+            logo: bank.logo,
+          }));
+
+        setBank(mappedBank);
+      } catch (error) {
+        console.error("Error fetching bank data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBank();
+  }, []);
+
   return (
     <div className="w-full bg-gray-200">
       <div className="flex flex-col items-center justify-center py-20 mx-20 mt-20">
-        <img
-          src={LogoBCG}
-          alt=""
-          className="h-15 w-30 mb-7"
-          data-aos="fade-up"
-        />
-        <h1
-          className="text-4xl font-semibold text-center mb-5"
-          data-aos="fade-up"
-        >
-          KERJASAMA BANK
-        </h1>
-        <div
-          className="grid justify-center gap-2 my-10 gap-5 sm:gap-15 md:px-5 lg:px-20 lg:gap-20 items-center justify-items-center w-full object-cover grid-cols-3 md:grid-cols-5"
-          data-aos="fade-up"
-        >
-          <img src={BankBRI} alt="Bank BRI" className="h-auto w-auto mb-7" />
-          <img src={BankBJB} alt="Bank BJB" className="h-auto w-auto mb-7" />
-          <img
-            src={BankBTN}
-            alt="Bank BTN Konvensional"
-            className="h-auto w-auto mb-7"
-          />
-          <img
-            src={BankMandiri}
-            alt="Bank Mandiri"
-            className="h-auto w-auto mb-7"
-          />
-          <img src={BankBSI} alt="Bank BSI" className="h-auto w-auto mb-7" />
-        </div>
+        <Section title={data.title} />
+
+        {/* Bank Mitra */}
+        {loading ? (
+          <p className="text-gray-500 mt-10">Loading logo bank...</p>
+        ) : bank.length === 0 ? (
+          <p className="text-red-500 mt-10">
+            Tidak ada logo bank yang tersedia.
+          </p>
+        ) : (
+          <div
+            className="grid justify-center gap-10 my-10 gap-5 sm:gap-15 md:px-5 lg:px-20 lg:gap-20 items-center justify-items-center w-full object-cover grid-cols-3 md:grid-cols-5"
+            data-aos="fade-up"
+          >
+            {bank.map((item) => (
+              <img
+                key={item.id}
+                src={item.logo}
+                alt={`Bank-${item.id}`}
+                className="h-auto w-auto mb-7 max-h-30 object-contain"
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
