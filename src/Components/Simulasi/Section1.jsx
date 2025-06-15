@@ -15,6 +15,12 @@ function Section1({ data }) {
   const angsuran =
     (pinjaman * bungaPerBulan) / (1 - Math.pow(1 + bungaPerBulan, -totalBulan));
 
+  const handleHargaChange = (e) => {
+    let value = e.target.value.replace(/\D/g, "");
+    if (value.startsWith("0")) value = value.replace(/^0+/, "");
+    setHargaProperti(value);
+  };
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center py-10 mt-10 mx-10">
@@ -29,9 +35,12 @@ function Section1({ data }) {
               HARGA PROPERTI
             </label>
             <input
-              type="number"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              placeholder="Masukkan harga properti dalam mata uang Rupiah"
               value={hargaProperti}
-              onChange={(e) => setHargaProperti(Number(e.target.value))}
+              onChange={handleHargaChange}
               className="w-full p-3 border rounded-lg"
             />
           </div>
@@ -78,11 +87,13 @@ function Section1({ data }) {
               ESTIMASI SUKU BUNGA / TAHUN
             </label>
             <input
-              type="number"
+              type="text"
               value={sukuBunga}
-              onChange={(e) => setSukuBunga(Number(e.target.value))}
               className="w-full p-3 border rounded-lg"
             />
+            <p className="text-xs text-gray-500 mt-1">
+              Simulasi diatas hanya perhitungan dengan suku bunga tetap (fixed).
+            </p>
           </div>
         </div>
 
