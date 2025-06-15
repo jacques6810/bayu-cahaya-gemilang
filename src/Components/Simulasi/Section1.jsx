@@ -38,10 +38,10 @@ function Section1({ data }) {
               type="text"
               inputMode="numeric"
               pattern="[0-9]*"
-              placeholder="Masukkan harga properti dalam mata uang Rupiah"
+              placeholder="Masukkan harga properti dalam Rupiah"
               value={hargaProperti}
               onChange={handleHargaChange}
-              className="w-full p-3 border rounded-lg"
+              className="w-full p-3 border rounded-lg placeholder:text-xs md:placeholder:text-base"
             />
           </div>
 
