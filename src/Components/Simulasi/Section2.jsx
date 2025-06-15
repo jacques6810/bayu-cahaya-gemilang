@@ -38,7 +38,7 @@ function Section2({ data }) {
 
   return (
     <div className="w-full bg-gray-200">
-      <div className="flex flex-col items-center justify-center py-20 mx-20 mt-20">
+      <div className="flex flex-col items-center justify-center py-20 mx-10 md:mx-auto mt-20">
         <Section title={data.title} />
 
         {/* Bank Mitra */}
@@ -50,7 +50,7 @@ function Section2({ data }) {
           </p>
         ) : (
           <div
-            className="grid justify-center gap-10 my-10 gap-5 sm:gap-15 md:px-5 lg:px-20 lg:gap-20 items-center justify-items-center w-full object-cover grid-cols-3 md:grid-cols-5"
+            className="grid justify-center my-10 gap-10 sm:gap-15 md:px-5 lg:px-20 lg:gap-20 items-center justify-items-center w-full object-cover grid-cols-3 md:grid-cols-5"
             data-aos="fade-up"
           >
             {bank.map((item) => (
